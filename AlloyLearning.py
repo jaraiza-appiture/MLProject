@@ -882,7 +882,7 @@ class CrossVal():
             print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],params_rmse[rmse_in]))
             print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],params_rmse[rmse_in]),file=self.__file_)
         print('************************************************************************')
-        print('************************************************************************',file=self.__file_)   
+        print('************************************************************************',file=self.__file_)
 
 class AlloyModelEval():
     '''
@@ -1194,64 +1194,6 @@ def prep_poly_data(readyData,deg):
 
 #!################################ DATA PREPARATION #####################################################
 
-#******************************9_12Cr****************************************
-#default values to fill in missiing values for the following features
-fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
-            'Si':0,'Ni':0,'Co':0,'Mo':0,
-            'W':0,'Nb':0,'Al':0,'P':0,
-            'Cu':0,'Ti':0,'Ta':0,'Hf':0,
-            'Re':0,'V':0,'B':0,'N':0,
-            'O':0,'S':0,'Homo':0,'Normal':25,
-            'Temper1':25,'Temper2':25,'Temper3':25}
-
-#Drop any rows where a missing value in the following features exist
-#even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
-dropna9_12Cr = ['ID','CT Temp','CS','RT','AGS','AGS No.']
-
-#Features/Columns to remove from dataset
-exclude9_12Cr = ['TT Temp','YS',
-                  'UTS','Elong','RA','EL','RA_2',
-                  'MCR','0.1% CS','0.2% CS','0.5% CS',
-                  '1.0% CS','2.0% CS','5.0% CS','TTC',
-                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
-
-N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
-                         label='RT',
-                         dropna_cols=dropna9_12Cr,
-                         exclude_cols=[],#exclude9_12Cr,
-                         fill_vals=fillvals,
-                         )
-ready9_12Cr = N9_12Cr.prep_it()
-
-# #******************************LOWCR****************************************
-# fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
-#             'Si':0,'Ni':0,'Co':0,'Mo':0,
-#             'W':0,'Nb':0,'Al':0,'P':0,
-#             'Cu':0,'TI':0,'Ta':0,'Hf':0,
-#             'Re':0,'V':0,'B':0,'N':0,
-#             'O':0,'S':0,'Homo':0,'Normal':25,
-#             'Temper1':25,'Temper2':25,'Temper3':25,'Temper4':25}
-
-# dropnaLowCr = ['ID','CT Temp','CS','RT','RA.1']
-
-# excludeLowCr = ['TT Temp','YS',
-#                   'UTS','Elong','RA','EL',
-#                   'MCR','0.1% CS','0.2% CS','0.5% CS',
-#                   '1.0% CS','2.0% CS','5.0% CS','TTC',
-#                   'ID','Co','Ta','Hf','Re','Homo','AGS',
-#                   'B','Nb','Temper3','TI','W','Temper4','O']
-
-# LowCr = AlloyDataPreper(Dataset='LowCr.csv',
-#                          label='RT',
-#                          dropna_rows=dropnaLowCr,
-#                          exclude_cols=excludeLowCr,
-#                          fill_vals=fillvals,
-#                          )
-# readyLowCr = LowCr.prep_it()
-
-#!################################ END #####################################################
-
-
 #! Data Preper
 def Data_9_12_Preper(alloyData):
     label_name = 'Temp*log(RT)'
@@ -1286,6 +1228,62 @@ def Data_9_12_Preper_log(alloyData):
 #! Apply Function
 def apply_9_12_func_log(data,apply_data):
     return np.exp(data)
+#%%
+#******************************9_12Cr****************************************
+#default values to fill in missiing values for the following features
+fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
+            'Si':0,'Ni':0,'Co':0,'Mo':0,
+            'W':0,'Nb':0,'Al':0,'P':0,
+            'Cu':0,'Ti':0,'Ta':0,'Hf':0,
+            'Re':0,'V':0,'B':0,'N':0,
+            'O':0,'S':0,'Homo':0,'Normal':25,
+            'Temper1':25,'Temper2':25,'Temper3':25}
+
+#Drop any rows where a missing value in the following features exist
+#even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
+dropna9_12Cr = ['ID','CT Temp','CS','RT','AGS','AGS No.']
+
+#Features/Columns to remove from dataset
+exclude9_12Cr = ['TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
+
+N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
+                         label='RT',
+                         dropna_cols=dropna9_12Cr,
+                         exclude_cols=exclude9_12Cr,
+                         fill_vals=fillvals,
+                         )
+ready9_12Cr = N9_12Cr.prep_it()
+
+# #******************************LOWCR****************************************
+# fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
+#             'Si':0,'Ni':0,'Co':0,'Mo':0,
+#             'W':0,'Nb':0,'Al':0,'P':0,
+#             'Cu':0,'TI':0,'Ta':0,'Hf':0,
+#             'Re':0,'V':0,'B':0,'N':0,
+#             'O':0,'S':0,'Homo':0,'Normal':25,
+#             'Temper1':25,'Temper2':25,'Temper3':25,'Temper4':25}
+
+# dropnaLowCr = ['ID','CT Temp','CS','RT','RA.1']
+
+# excludeLowCr = ['TT Temp','YS',
+#                   'UTS','Elong','RA','EL',
+#                   'MCR','0.1% CS','0.2% CS','0.5% CS',
+#                   '1.0% CS','2.0% CS','5.0% CS','TTC',
+#                   'ID','Co','Ta','Hf','Re','Homo','AGS',
+#                   'B','Nb','Temper3','TI','W','Temper4','O']
+
+# LowCr = AlloyDataPreper(Dataset='LowCr.csv',
+#                          label='RT',
+#                          dropna_rows=dropnaLowCr,
+#                          exclude_cols=excludeLowCr,
+#                          fill_vals=fillvals,
+#                          )
+# readyLowCr = LowCr.prep_it()
+
+#!################################ END #####################################################
+
+
 
 
 #%%
@@ -1356,3 +1354,4 @@ Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test',
                             gscv=5
                             )
 Evaluator.perform_validation()
+
