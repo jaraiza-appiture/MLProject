@@ -189,12 +189,22 @@ class AlloyDataPreper():
         NewD = self.__clean_alloy_data(NewD)
         self.__Alloy_Data.update({self.__Dataset:NewD})
 
+    def __drop(self,Alloy_Data):
+        '''[summary]
+        Arguments:
+            Alloy_Data {[type]} -- [description]
+        Returns:
+            [type] -- [description]
+        '''
+        Alloy_Data = Alloy_Data.drop(self.__exclude_cols,axis=1)
+        return Alloy_Data
+
     def __split(self,Alloy_Data):
         '''
         Splits predictors and labels
         '''
         #drop exclusion columns
-        Alloy_Data = Alloy_Data.drop(self.__exclude_cols,axis=1)
+        Alloy_Data = self.__drop(Alloy_Data)
 
         # Seperate Labels and Predictors
         preds = Alloy_Data.drop(self.__label,axis=1)#drop label column for training set
@@ -210,6 +220,7 @@ class AlloyDataPreper():
             CDset = DSet.copy()
             shuffledDset = shuffle(CDset)
             #preds,labels = self.__split(shuffledDset)
+            shuffledDset = self.__drop(shuffledDset)
             self.__Ready_Data = {'data':shuffledDset,'name':DName}
 
     def __shuffleData_split(self):
@@ -1241,10 +1252,11 @@ fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
 
 #Drop any rows where a missing value in the following features exist
 #even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
-dropna9_12Cr = ['ID','CT Temp','CS','RT','AGS','AGS No.']
+dropna9_12Cr = ['CT Temp','CS','RT','AGS','AGS No.']
 
 #Features/Columns to remove from dataset
-exclude9_12Cr = ['TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+exclude9_12Cr = ['UTS','Elong',
+                  'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                   'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
 
 N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
@@ -1255,31 +1267,6 @@ N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name
                          )
 ready9_12Cr = N9_12Cr.prep_it()
 
-# #******************************LOWCR****************************************
-# fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
-#             'Si':0,'Ni':0,'Co':0,'Mo':0,
-#             'W':0,'Nb':0,'Al':0,'P':0,
-#             'Cu':0,'TI':0,'Ta':0,'Hf':0,
-#             'Re':0,'V':0,'B':0,'N':0,
-#             'O':0,'S':0,'Homo':0,'Normal':25,
-#             'Temper1':25,'Temper2':25,'Temper3':25,'Temper4':25}
-
-# dropnaLowCr = ['ID','CT Temp','CS','RT','RA.1']
-
-# excludeLowCr = ['TT Temp','YS',
-#                   'UTS','Elong','RA','EL',
-#                   'MCR','0.1% CS','0.2% CS','0.5% CS',
-#                   '1.0% CS','2.0% CS','5.0% CS','TTC',
-#                   'ID','Co','Ta','Hf','Re','Homo','AGS',
-#                   'B','Nb','Temper3','TI','W','Temper4','O']
-
-# LowCr = AlloyDataPreper(Dataset='LowCr.csv',
-#                          label='RT',
-#                          dropna_rows=dropnaLowCr,
-#                          exclude_cols=excludeLowCr,
-#                          fill_vals=fillvals,
-#                          )
-# readyLowCr = LowCr.prep_it()
 
 #!################################ END #####################################################
 
