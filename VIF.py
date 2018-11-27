@@ -8,8 +8,8 @@ from AlloyLearning import AlloyDataPreper
 # Input data files are available in the "../input/" directory.
 # For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
 
-from subprocess import check_output
-print(check_output(["ls", "../input"]).decode("utf8"))
+#from subprocess import check_output
+#print(check_output(["ls", "../input"]).decode("utf8"))
 
 # Any results you write to the current directory are saved as output.
 
@@ -87,10 +87,16 @@ exclude9_12Cr = ['UTS','Elong',
                   'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                   'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
 
+exclude9_12Cr_2 = ['UTS','Elong','Normal','Fe','Cr','N','AGS No.','V',
+                  'Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo',
+                  'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
+
+
 N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
                          label='RT',
                          dropna_cols=dropna9_12Cr,
-                         exclude_cols=exclude9_12Cr,
+                         exclude_cols=exclude9_12Cr_2,
                          fill_vals=fillvals,
                          )
 ready9_12Cr = N9_12Cr.prep_it_split()

@@ -1,0 +1,24 @@
+Results from calculating VIF to determine multicollinearity
+
+ReduceVIF fit
+ReduceVIF transform
+Dropping Normal with vif=1577.6149363342893
+Dropping Fe with vif=1001.5636948360816
+Dropping Cr with vif=433.5441126330935
+Dropping CT Temp with vif=205.53106323959062
+Dropping N with vif=159.16076167425805
+Dropping AGS No. with vif=98.66010617099
+Dropping V with vif=78.92151344019166
+Dropping Mn with vif=67.34070091620131
+Dropping C with vif=53.34708068892768
+Dropping B with vif=40.4084995521729
+Dropping RA_2 with vif=27.610785724289
+Dropping Temper1 with vif=21.779632205177915
+Dropping P with vif=18.12606251857507
+Dropping Si with vif=14.535698567458276
+Dropping Ni with vif=11.241499613454193
+Dropping Nb with vif=8.216320694877181
+Dropping 1.0% CS with vif=8.012240785207968
+Dropping S with vif=5.704614644571844
+Dropping Mo with vif=5.373117985098331
+

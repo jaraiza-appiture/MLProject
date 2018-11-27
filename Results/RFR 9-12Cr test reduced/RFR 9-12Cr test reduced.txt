@@ -1,0 +1,290 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: RFR 9-12Cr test reduced
+Size of Dataset:  1489
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6453.492043866926
+	Test Score:
+		Mean RMSE:  17018.672367718427
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6391.565449054713
+	Test Score:
+		Mean RMSE:  17091.759051642788
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6946.39100790052
+	Test Score:
+		Mean RMSE:  18594.10067434098
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  7007.147726878573
+	Test Score:
+		Mean RMSE:  18753.207397481292
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6884.686170464529
+	Test Score:
+		Mean RMSE:  17810.65715785484
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6954.688788899929
+	Test Score:
+		Mean RMSE:  17854.91020038691
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6477.820330434721
+	Test Score:
+		Mean RMSE:  16892.194984038906
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6536.192492322674
+	Test Score:
+		Mean RMSE:  16933.828140437497
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6838.804420076334
+	Test Score:
+		Mean RMSE:  17533.763972582346
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6846.9096109089905
+	Test Score:
+		Mean RMSE:  17732.717544825056
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6827.445319506956
+	Test Score:
+		Mean RMSE:  18320.234077456145
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6819.233354419984
+	Test Score:
+		Mean RMSE:  18332.03156885719
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6932.603096929888
+	Test Score:
+		Mean RMSE:  17315.144008686973
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6830.729299677031
+	Test Score:
+		Mean RMSE:  17315.986713004088
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6846.395780165878
+	Test Score:
+		Mean RMSE:  17704.65892390222
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6840.969450473625
+	Test Score:
+		Mean RMSE:  17711.506361389933
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6968.050414389475
+	Test Score:
+		Mean RMSE:  18631.975264601428
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  7118.42331992071
+	Test Score:
+		Mean RMSE:  18761.667319437667
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6618.025064331011
+	Test Score:
+		Mean RMSE:  17273.502056368627
+************************************************************************
+
+Params:
+	Model: [{'n_estimators': 325, 'n_jobs': -1}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  6611.341853140519
+	Test Score:
+		Mean RMSE:  17365.387277757025
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'n_estimators': 325, 'n_jobs': -1}
+	Preprocessing: {'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+Stats:
+	Ocurrence: 6
+	Frequency: 0.600000
+************************************************************************
+
+Params:
+	Model: {'n_estimators': 325, 'n_jobs': -1}
+	Preprocessing: {'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+Stats:
+	Ocurrence: 4
+	Frequency: 0.400000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 16661.251212
+	STD RMSE: 4201.888326
+	Mean R Squared: 0.6757901620902785
+	STD R Squared: 0.049504
+	RMSE SCORES:
+		[0] 23559.206483  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[1] 13175.254597  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[2] 13474.873219  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[3] 25331.459871  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[4] 15055.381336  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[5] 15409.609683  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[6] 14252.407002  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[7] 12535.119977  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[8] 15425.870786  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[9] 18393.329163  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+
+Train Scores:
+	Mean RMSE: 6307.928293
+	STD RMSE: 119.076164
+	Mean R Squared: 0.9668485264947982
+	STD R Squared: 0.001557
+	RMSE SCORES:
+		[0] 6103.428808  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[1] 6447.357023  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[2] 6282.139529  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[3] 6247.327482  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[4] 6365.717905  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[5] 6280.634928  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[6] 6404.968000  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[7] 6329.404838  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.MinMaxScaler'>}
+		[8] 6485.543662  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[9] 6132.760757  {'n_estimators': 325, 'n_jobs': -1, 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+************************************************************************

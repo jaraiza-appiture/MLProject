@@ -1239,106 +1239,168 @@ def Data_9_12_Preper_log(alloyData):
 #! Apply Function
 def apply_9_12_func_log(data,apply_data):
     return np.exp(data)
-#%%
-#******************************9_12Cr****************************************
-#default values to fill in missiing values for the following features
-fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
-            'Si':0,'Ni':0,'Co':0,'Mo':0,
-            'W':0,'Nb':0,'Al':0,'P':0,
-            'Cu':0,'Ti':0,'Ta':0,'Hf':0,
-            'Re':0,'V':0,'B':0,'N':0,
-            'O':0,'S':0,'Homo':0,'Normal':25,
-            'Temper1':25,'Temper2':25,'Temper3':25}
 
-#Drop any rows where a missing value in the following features exist
-#even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
-dropna9_12Cr = ['CT Temp','CS','RT','AGS','AGS No.']
+if __name__ == "__main__":
 
-#Features/Columns to remove from dataset
-exclude9_12Cr = ['UTS','Elong',
+    #%%
+    #******************************9_12Cr****************************************
+    #default values to fill in missiing values for the following features
+    fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
+                'Si':0,'Ni':0,'Co':0,'Mo':0,
+                'W':0,'Nb':0,'Al':0,'P':0,
+                'Cu':0,'Ti':0,'Ta':0,'Hf':0,
+                'Re':0,'V':0,'B':0,'N':0,
+                'O':0,'S':0,'Homo':0,'Normal':25,
+                'Temper1':25,'Temper2':25,'Temper3':25}
+
+    #Drop any rows where a missing value in the following features exist
+    #even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
+    dropna9_12Cr = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
+
+    #Features/Columns to remove from dataset
+    exclude9_12Cr = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                    'UTS','Elong',
+                    'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                    'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
+
+    exclude9_12Cr_2 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                  'UTS','Elong',
+                  'Normal','Fe','Cr','N','AGS No.','V','Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo', #recommended to remove based on vif
+                  'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
+    exclude9_12Cr_3 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                  'UTS','Elong',
+                  'Normal','Fe','Cr','N','AGS No.','V','Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo', #recommended to remove based on vif
                   'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                   'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
 
-N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
-                         label='RT',
-                         dropna_cols=dropna9_12Cr,
-                         exclude_cols=exclude9_12Cr,
-                         fill_vals=fillvals,
-                         )
-ready9_12Cr = N9_12Cr.prep_it()
-
-
-#!################################ END #####################################################
-
-
-
-
-#%%
-###### Corr Matrix Calculations
-corMat = ready9_12Cr['data'].corr()
-os.chdir(RESULTS_PATH)
-f = open('corrMat9-12Cr.txt','w')
-#with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-print(corMat.to_string(),file=f)
-
-
-
-#%%
-# Initial Testing #
-
-# Random Forest Regression
-
-#! Transformer Param Grid
-t_pg = [
-        {'tr_scaler':[StandardScaler,MinMaxScaler]}]
-#! Model Param Grid
-m_pg = {'n_estimators':[275,300,325,350,400],'n_jobs':[-1]}
-#? 9_12Cr
-Evaluator = AlloyModelEval(eval_name='RFR 9-12Cr test',#Give this test a name
-                          estimator=RandomForestRegressor,#Give it an ML algorithm to use
-                          alloy_data=N9_12Cr.prep_it(),#Give it the Data preped
-                          model_param_grid=m_pg,#Give it parameter values to try
-                          tran_param_grid=t_pg,#Give it scalers to try
-                          cv=10,
-                          gscv=5
-                          )
-Evaluator.perform_validation()
-
-
-# Linear Regession
-#! Transformer Param Grid
-t_pg = [{'tr_scaler':[StandardScaler,MinMaxScaler]}]
-#! Model Param Grid
-m_pg = {}
-
-#? CREEP
-Evaluator = AlloyModelEval(eval_name='LinearReg 9-12Cr test',
-                            estimator=LinearRegression,
-                            alloy_data=N9_12Cr.prep_it(),
-                            model_param_grid=m_pg,
-                            tran_param_grid=t_pg,
-                            cv=10,
-                            gscv=5
+    N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
+                            label='RT',
+                            dropna_cols=dropna9_12Cr,
+                            exclude_cols=exclude9_12Cr,
+                            fill_vals=fillvals,
                             )
-Evaluator.perform_validation()
 
-
-# Multi-Layer Perceptron Neural Network Regression
-t_pg = [{'tr_scaler':[StandardScaler,MinMaxScaler]}]
-#! Model Param Grid
-m_pg = {'max_iter':[250,300,350,400],
-        'activation':['relu'],
-        'solver':['lbfgs'],
-        'alpha':[0.0001,0.001,0.01,0.1,1,10],
-        'learning_rate':['constant','invscaling','adaptive']}
-
-Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test',
-                            estimator=MLPRegressor,
-                            alloy_data=N9_12Cr.prep_it(),
-                            model_param_grid=m_pg,
-                            tran_param_grid=t_pg,
-                            cv=10,
-                            gscv=5
+    N9_12Cr_Reduced = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
+                            label='RT',
+                            dropna_cols=dropna9_12Cr,
+                            exclude_cols=exclude9_12Cr_2,
+                            fill_vals=fillvals,
                             )
-Evaluator.perform_validation()
+    ready9_12Cr = N9_12Cr.prep_it()
+    ready9_12Cr_Reduced = N9_12Cr_Reduced.prep_it()
 
+
+    #!################################ END #####################################################
+
+
+
+
+    # #%%
+    # ###### Corr Matrix Calculations
+    # corMat = ready9_12Cr['data'].corr()
+    # os.chdir(RESULTS_PATH)
+    # f = open('corrMat9-12Cr.txt','w')
+    # #with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+    # print(corMat.to_string(),file=f)
+
+
+
+    #%%
+    # Initial Testing #
+
+    # Random Forest Regression
+    # print(ready9_12Cr['data'].head(50))
+
+    # #! Transformer Param Grid
+    # t_pg = [
+    #         {'tr_scaler':[StandardScaler,MinMaxScaler]}]
+    # #! Model Param Grid
+    # m_pg = {'n_estimators':[325],'n_jobs':[-1]}
+    # #? 9_12Cr
+    # Evaluator = AlloyModelEval(eval_name='RFR 9-12Cr test',#Give this test a name
+    #                         estimator=RandomForestRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         cv=10,
+    #                         gscv=5
+    #                         )
+    # Evaluator.perform_validation()
+
+    # Evaluator = AlloyModelEval(eval_name='RFR 9-12Cr test reduced',#Give this test a name
+    #                         estimator=RandomForestRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr_Reduced.prep_it_split(),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         cv=10,
+    #                         gscv=5
+    #                         )
+    # Evaluator.perform_validation()
+
+
+    # # Linear Regession
+    # #! Transformer Param Grid
+    # t_pg = [{'tr_scaler':[StandardScaler,MinMaxScaler]}]
+    # #! Model Param Grid
+    # m_pg = {}
+
+    # #? CREEP
+    # Evaluator = AlloyModelEval(eval_name='LinearReg 9-12Cr test',
+    #                             estimator=LinearRegression,
+    #                             alloy_data=N9_12Cr.prep_it_split(),
+    #                             model_param_grid=m_pg,
+    #                             tran_param_grid=t_pg,
+    #                             cv=10,
+    #                             gscv=5
+    #                             )
+    # Evaluator.perform_validation()
+
+    # Evaluator = AlloyModelEval(eval_name='LinearReg 9-12Cr test reduced',
+    #                             estimator=LinearRegression,
+    #                             alloy_data=N9_12Cr_Reduced.prep_it_split(),
+    #                             model_param_grid=m_pg,
+    #                             tran_param_grid=t_pg,
+    #                             cv=10,
+    #                             gscv=5
+    #                             )
+    # Evaluator.perform_validation()
+
+
+    # Multi-Layer Perceptron Neural Network Regression
+    t_pg = [{'tr_scaler':[StandardScaler]}]
+    #! Model Param Grid
+    # m_pg = {'max_iter':[250,300,350,400],
+    #         'activation':['relu'],
+    #         'solver':['lbfgs'],
+    #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
+    #         'learning_rate':['constant','invscaling','adaptive']}
+
+    m_pg = {'max_iter':[300],
+                'activation':['relu'],
+                'solver':['lbfgs'],
+                'alpha':[0.01],
+                'learning_rate':['adaptive']}
+
+
+    Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test',
+                                estimator=MLPRegressor,
+                                alloy_data=N9_12Cr.prep_it_split(),
+                                model_param_grid=m_pg,
+                                tran_param_grid=t_pg,
+                                cv=10,
+                                gscv=5
+                                )
+    Evaluator.perform_validation()
+
+    Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test reduced',
+                                estimator=MLPRegressor,
+                                alloy_data=N9_12Cr_Reduced.prep_it_split(),
+                                model_param_grid=m_pg,
+                                tran_param_grid=t_pg,
+                                cv=10,
+                                gscv=5
+                                )
+    Evaluator.perform_validation()
+
+    #TODO add forward selection capabilities
