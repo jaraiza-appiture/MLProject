@@ -1336,7 +1336,6 @@ class Backward_Selection():
         return cur_min_rmse, cur_min_r2, self.exclude
 
 
-
 if __name__ == "__main__":
 
     #%%
@@ -1354,31 +1353,22 @@ if __name__ == "__main__":
     #even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
     dropna9_12Cr = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
 
-    dropna9_12Cr_3 = ['CT Temp','CS','RT','AGS No.','EL','RA_2','1.0% CS','2.0% CS','5.0% CS']
-
-
     #Features/Columns to remove from dataset
     exclude9_12Cr = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
                     'UTS','Elong',
                     'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
-                    'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
-
-    exclude9_12Cr_4 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
-                    'Normal','Fe','Cr','N','AGS','V','Mn','C','B','P','Si','Ni','Nb','S','Mo', #dropping 1.0-5.0% CS features
-                    'UTS','Elong',
-                    'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                     'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']
 
-    exclude9_12Cr_2 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
-                  'UTS','Elong',
-                  'Normal','Fe','Cr','N','AGS No.','V','Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo', #recommended to remove based on vif
-                  'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
-                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
-    exclude9_12Cr_3 = ['MCR','0.5% CS',
-                  'UTS','Elong',
-                  'Normal','Fe','Cr','N','AGS','V','Mn','C','B','P','Si','Ni','Nb','S','Mo', #recommended to remove based on CorMat
-                  'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
-                  'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
+    # New Exclude based on Backward Selection
+    dropna9_12Cr_reduced = ['CT Temp','CS','RT','EL','RA_2']
+
+    exclude9_12Cr_reduced = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                             'UTS','Elong',
+                             'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                             'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
+                             'P','AGS No.','Ni','EL','AGS','Nb'] #new drops
+
+
 
     N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
                             label='RT',
@@ -1386,15 +1376,7 @@ if __name__ == "__main__":
                             exclude_cols=exclude9_12Cr,
                             fill_vals=fillvals,
                             )
-
-    N9_12Cr_Reduced = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
-                            label='RT',
-                            dropna_cols=dropna9_12Cr,
-                            exclude_cols=exclude9_12Cr_4,
-                            fill_vals=fillvals,
-                            )
     ready9_12Cr = N9_12Cr.prep_it()
-    ready9_12Cr_Reduced = N9_12Cr_Reduced.prep_it()
 
 
     #!################################ END #####################################################
@@ -1482,42 +1464,13 @@ if __name__ == "__main__":
     #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
     #         'learning_rate':['constant','invscaling','adaptive']}
 
-
-
-
-
-
-
-
-
-
-
     m_pg = {'max_iter':[300],
-                'activation':['relu'],
-                'solver':['lbfgs'],
-                'alpha':[0.01],
-                'learning_rate':['adaptive']}
+            'activation':['relu'],
+            'solver':['lbfgs'],
+            'alpha':[0.01],
+            'learning_rate':['adaptive']
+           }
 
-
-    # Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test 4 cormat',
-    #                             estimator=MLPRegressor,
-    #                             alloy_data=N9_12Cr.prep_it_split(),
-    #                             model_param_grid=m_pg,
-    #                             tran_param_grid=t_pg,
-    #                             cv=10,
-    #                             gscv=5
-    #                             )
-    # Evaluator.perform_validation()
-
-    # Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test reduced 4 cormat',
-    #                             estimator=MLPRegressor,
-    #                             alloy_data=N9_12Cr_Reduced.prep_it_split(),
-    #                             model_param_grid=m_pg,
-    #                             tran_param_grid=t_pg,
-    #                             cv=10,
-    #                             gscv=5
-    #                             )
-    # Evaluator.perform_validation()
     bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg')
     print(bs.select())
     #TODO add forward selection capabilities
