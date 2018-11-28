@@ -1323,7 +1323,7 @@ class Backward_Selection():
                 cur_min_rmse = next_min_rmse
                 cur_min_r2 = next_min_r2
                 self.exclude.append(final_drop_feat)
-                try_features.remove(final_drop_feat)
+                features.remove(final_drop_feat)
                 print("Dropping: "+ final_drop_feat)
                 print("Current Min Mean RMSE: "+str(cur_min_rmse))
                 print("Current Min Mean R2: "+str(cur_min_r2))
