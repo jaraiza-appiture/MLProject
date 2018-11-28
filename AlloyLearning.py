@@ -895,6 +895,7 @@ class CrossVal():
         print('************************************************************************')
         print('************************************************************************',file=self.__file_)
 
+        return test_scores['mean_rmse'], test_scores['mean_r_squared']
 class AlloyModelEval():
     '''
     DESCRIPTION: Tests model performance on a given dataset using cross validation and inner grid search cross validation.
@@ -1096,8 +1097,9 @@ class AlloyModelEval():
 
 
         # perform evaluation
-        self.__cvTool.validate()
+        mean_rmse,mean_r2= self.__cvTool.validate()
         fileE.close()
+        return mean_rmse, mean_r2
 
 #Other utility functions
 def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300,location=RESULTS_PATH):
@@ -1240,6 +1242,95 @@ def Data_9_12_Preper_log(alloyData):
 def apply_9_12_func_log(data,apply_data):
     return np.exp(data)
 
+class Backward_Selection():
+    def __init__(self,
+                fill_vals,
+                dropna,
+                exclude,
+                t_pg,
+                m_pg,
+                estimator,
+                eval_name,
+                dataset_name='9_12_Cr.csv',
+                label='RT'
+                ):
+
+        self.fill_vals = fill_vals
+        self.exclude = exclude
+        self.dropna = dropna
+        self.dataset_name = dataset_name
+        self.label = label
+        self.data = None
+
+        self.t_pg = t_pg
+        self.m_pg = m_pg
+        self.estimator = estimator
+        self.eval_name = eval_name
+        self.evaluator = None
+
+    def prepare_data(self):
+        datapreper = AlloyDataPreper(Dataset=self.dataset_name,
+                            label=self.label,
+                            dropna_cols=self.dropna,
+                            exclude_cols=self.exclude,
+                            fill_vals=self.fill_vals,
+                            )
+        self.data = datapreper.prep_it_split()
+
+    def get_features(self):
+        return self.data['preds'].columns.tolist()
+
+    def prepare_evaluator(self):
+        self.evaluator = AlloyModelEval(eval_name=self.eval_name,
+                                estimator=self.estimator,
+                                alloy_data=self.data,
+                                model_param_grid=self.m_pg,
+                                tran_param_grid=self.t_pg,
+                                cv=10,
+                                gscv=5
+                                )
+
+    def select(self):
+        #initial try
+        self.prepare_data()
+        try_features = self.get_features()
+        self.prepare_evaluator()
+        mean_rmse,mean_r2 = self.evaluator.perform_validation()
+
+        next_min_rmse = mean_rmse
+        next_min_r2 = mean_r2
+
+        cur_min_rmse = mean_rmse
+        cur_min_r2 = mean_r2
+
+        final_drop_feat = ''
+
+
+        while True:
+            for f in try_features:
+                self.exclude.append(f)
+                self.prepare_data()
+                self.prepare_evaluator()
+
+                reduced_mean_rmse,reduced_mean_r2 = self.evaluator.perform_validation()
+                if reduced_mean_rmse < next_min_rmse:
+                    final_drop_feat = f
+                    next_min_rmse = reduced_mean_rmse
+                    next_min_r2 = reduced_mean_r2
+                self.exclude.remove(f)
+
+            if next_min_rmse < cur_min_rmse:
+                cur_min_rmse = next_min_rmse
+                cur_min_r2 = next_min_r2
+                self.exclude.append(final_drop_feat)
+                try_features.remove(final_drop_feat)
+            else:
+                break
+
+        return cur_min_rmse, cur_min_r2, self.exclude
+
+
+
 if __name__ == "__main__":
 
     #%%
@@ -1257,20 +1348,29 @@ if __name__ == "__main__":
     #even if just one of the following features is missing a value, entire row(instance/datapoint) will be dropped
     dropna9_12Cr = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
 
+    dropna9_12Cr_3 = ['CT Temp','CS','RT','AGS No.','EL','RA_2','1.0% CS','2.0% CS','5.0% CS']
+
+
     #Features/Columns to remove from dataset
     exclude9_12Cr = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
                     'UTS','Elong',
                     'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                     'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
 
+    exclude9_12Cr_4 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                    'Normal','Fe','Cr','N','AGS','V','Mn','C','B','P','Si','Ni','Nb','S','Mo', #dropping 1.0-5.0% CS features
+                    'UTS','Elong',
+                    'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                    'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']
+
     exclude9_12Cr_2 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
                   'UTS','Elong',
                   'Normal','Fe','Cr','N','AGS No.','V','Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo', #recommended to remove based on vif
                   'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                   'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
-    exclude9_12Cr_3 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+    exclude9_12Cr_3 = ['MCR','0.5% CS',
                   'UTS','Elong',
-                  'Normal','Fe','Cr','N','AGS No.','V','Mn','C','B','RA_2','Temper1','P','Si','Ni','Nb','1.0% CS','S','Mo', #recommended to remove based on vif
+                  'Normal','Fe','Cr','N','AGS','V','Mn','C','B','P','Si','Ni','Nb','S','Mo', #recommended to remove based on CorMat
                   'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                   'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']#'B','Co','Temper2','Temper1']
 
@@ -1284,7 +1384,7 @@ if __name__ == "__main__":
     N9_12Cr_Reduced = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
                             label='RT',
                             dropna_cols=dropna9_12Cr,
-                            exclude_cols=exclude9_12Cr_2,
+                            exclude_cols=exclude9_12Cr_4,
                             fill_vals=fillvals,
                             )
     ready9_12Cr = N9_12Cr.prep_it()
@@ -1376,6 +1476,16 @@ if __name__ == "__main__":
     #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
     #         'learning_rate':['constant','invscaling','adaptive']}
 
+
+
+
+
+
+
+
+
+
+
     m_pg = {'max_iter':[300],
                 'activation':['relu'],
                 'solver':['lbfgs'],
@@ -1383,24 +1493,25 @@ if __name__ == "__main__":
                 'learning_rate':['adaptive']}
 
 
-    Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test',
-                                estimator=MLPRegressor,
-                                alloy_data=N9_12Cr.prep_it_split(),
-                                model_param_grid=m_pg,
-                                tran_param_grid=t_pg,
-                                cv=10,
-                                gscv=5
-                                )
-    Evaluator.perform_validation()
+    # Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test 4 cormat',
+    #                             estimator=MLPRegressor,
+    #                             alloy_data=N9_12Cr.prep_it_split(),
+    #                             model_param_grid=m_pg,
+    #                             tran_param_grid=t_pg,
+    #                             cv=10,
+    #                             gscv=5
+    #                             )
+    # Evaluator.perform_validation()
 
-    Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test reduced',
-                                estimator=MLPRegressor,
-                                alloy_data=N9_12Cr_Reduced.prep_it_split(),
-                                model_param_grid=m_pg,
-                                tran_param_grid=t_pg,
-                                cv=10,
-                                gscv=5
-                                )
-    Evaluator.perform_validation()
-
+    # Evaluator = AlloyModelEval(eval_name='MLPReg 9-12Cr test reduced 4 cormat',
+    #                             estimator=MLPRegressor,
+    #                             alloy_data=N9_12Cr_Reduced.prep_it_split(),
+    #                             model_param_grid=m_pg,
+    #                             tran_param_grid=t_pg,
+    #                             cv=10,
+    #                             gscv=5
+    #                             )
+    # Evaluator.perform_validation()
+    bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg')
+    print(bs.select())
     #TODO add forward selection capabilities

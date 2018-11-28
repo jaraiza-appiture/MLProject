@@ -1,0 +1,17 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: MLPReg 9-12Cr test 2 cormat
+Size of Dataset:  1489
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'alpha': 0.01, 'learning_rate': 'adaptive', 'max_iter': 300, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1610.53008294853
+	Test Score:
+		Mean RMSE:  13555.463816636478
+************************************************************************
