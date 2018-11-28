@@ -895,7 +895,7 @@ class CrossVal():
         print('************************************************************************')
         print('************************************************************************',file=self.__file_)
 
-        return test_scores['mean_rmse'], test_scores['mean_r_squared']
+        return test_scores['mean_rmse'], test_scores['std_rmse'], test_scores['mean_r_squared'], test_scores['std_r_squared']
 class AlloyModelEval():
     '''
     DESCRIPTION: Tests model performance on a given dataset using cross validation and inner grid search cross validation.
@@ -1097,9 +1097,9 @@ class AlloyModelEval():
 
 
         # perform evaluation
-        mean_rmse,mean_r2= self.__cvTool.validate()
+        mean_rmse, std_rmse, mean_r2, std_r2 = self.__cvTool.validate()
         fileE.close()
-        return mean_rmse, mean_r2
+        return mean_rmse, std_rmse, mean_r2, std_r2
 
 #Other utility functions
 def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300,location=RESULTS_PATH):
@@ -1293,9 +1293,9 @@ class Backward_Selection():
     def select(self):
         #initial try
         self.prepare_data()
-        try_features = self.get_features()
+        features = self.get_features()
         self.prepare_evaluator()
-        mean_rmse,mean_r2 = self.evaluator.perform_validation()
+        mean_rmse, std_rmse, mean_r2, std_r2 = self.evaluator.perform_validation()
 
         next_min_rmse = mean_rmse
         next_min_r2 = mean_r2
@@ -1304,15 +1304,15 @@ class Backward_Selection():
         cur_min_r2 = mean_r2
 
         final_drop_feat = ''
+        Thresh = 0
 
-
-        while True:
-            for f in try_features:
+        while Thresh < 3:
+            for f in features:
                 self.exclude.append(f)
                 self.prepare_data()
                 self.prepare_evaluator()
 
-                reduced_mean_rmse,reduced_mean_r2 = self.evaluator.perform_validation()
+                reduced_mean_rmse, reduced_std_rmse, reduced_mean_r2, reduced_std_r2 = self.evaluator.perform_validation()
                 if reduced_mean_rmse < next_min_rmse:
                     final_drop_feat = f
                     next_min_rmse = reduced_mean_rmse
@@ -1324,9 +1324,15 @@ class Backward_Selection():
                 cur_min_r2 = next_min_r2
                 self.exclude.append(final_drop_feat)
                 try_features.remove(final_drop_feat)
+                print("Dropping: "+ final_drop_feat)
+                print("Current Min Mean RMSE: "+str(cur_min_rmse))
+                print("Current Min Mean R2: "+str(cur_min_r2))
             else:
-                break
+                Thresh+=1
 
+        print("Final results:")
+        print("Min Mean RMSE: "+str(cur_min_rmse))
+        print("Min Mean r2: "+str(cur_min_r2))
         return cur_min_rmse, cur_min_r2, self.exclude
 
 
