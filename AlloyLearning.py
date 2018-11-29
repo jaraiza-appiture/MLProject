@@ -1372,8 +1372,8 @@ if __name__ == "__main__":
 
     N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
                             label='RT',
-                            dropna_cols=dropna9_12Cr,
-                            exclude_cols=exclude9_12Cr,
+                            dropna_cols=dropna9_12Cr_reduced,
+                            exclude_cols=exclude9_12Cr_reduced,
                             fill_vals=fillvals,
                             )
     ready9_12Cr = N9_12Cr.prep_it()
@@ -1455,22 +1455,52 @@ if __name__ == "__main__":
     # Evaluator.perform_validation()
 
 
+    #~~~~~~~~~~~~~~BACKWARDS SELECTION~~~~~~~~~~~~~~~~~~~~~~~
     # Multi-Layer Perceptron Neural Network Regression
-    t_pg = [{'tr_scaler':[StandardScaler]}]
-    #! Model Param Grid
-    # m_pg = {'max_iter':[250,300,350,400],
+    # t_pg = [{'tr_scaler':[StandardScaler]}]
+    # #! Model Param Grid
+    # # m_pg = {'max_iter':[250,300,350,400],
+    # #         'activation':['relu'],
+    # #         'solver':['lbfgs'],
+    # #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
+    # #         'learning_rate':['constant','invscaling','adaptive']}
+
+    # m_pg = {'max_iter':[300],
     #         'activation':['relu'],
     #         'solver':['lbfgs'],
-    #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
-    #         'learning_rate':['constant','invscaling','adaptive']}
+    #         'alpha':[0.01],
+    #         'learning_rate':['adaptive']
+    #        }
 
-    m_pg = {'max_iter':[300],
+    # bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg')
+    # print(bs.select())
+
+
+    #~~~~~~~~~~~~~~~OPTIMIZING HYPER PARAMETERS~~~~~~~~~~~~~~~~~~~
+    # MLPRegressor(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+    #    beta_2=0.999, early_stopping=False, epsilon=1e-08,
+    #    hidden_layer_sizes=(100,), learning_rate='constant',
+    #    learning_rate_init=0.001, max_iter=200, momentum=0.9,
+    #    nesterovs_momentum=True, power_t=0.5, random_state=None,
+    #    shuffle=True, solver='adam', tol=0.0001, validation_fraction=0.1,
+    #    verbose=False, warm_start=False)
+
+    # Multi-Layer Perceptron Neural Network Regression
+    t_pg = [{'tr_scaler':[StandardScaler]}]
+    # #! Model Param Grid
+    m_pg = {'max_iter':[250,300,350,400],
             'activation':['relu'],
-            'solver':['lbfgs'],
-            'alpha':[0.01],
-            'learning_rate':['adaptive']
-           }
+            'solver':['lbfgs','sgd','adam'],
+            'alpha':[0.0001,0.001,0.01,0.1,1,10],
+            'learning_rate':['adaptive']}
 
-    bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg')
-    print(bs.select())
-    #TODO add forward selection capabilities
+
+    Evaluator = AlloyModelEval(eval_name='MLP 9-12Cr Optimizing Hyper Params',#Give this test a name
+                            estimator=MLPRegressor,#Give it an ML algorithm to use
+                            alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+                            model_param_grid=m_pg,#Give it parameter values to try
+                            tran_param_grid=t_pg,#Give it scalers to try
+                            cv=10,
+                            gscv=5
+                            )
+    Evaluator.perform_validation()
