@@ -1,0 +1,52 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: MLP 9-12Cr reduced Final Constant
+Size of Dataset:  1739
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+	Preprocessing: Standard Scaler
+Stats:
+	Ocurrence: 10
+	Frequency: 1.000000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 12502.964429
+	STD RMSE: 7327.562846
+	Mean R Squared: 0.812389760354268
+	STD R Squared: 0.176351
+	RMSE SCORES:
+		[0] 7988.628335  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[1] 13131.168017  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[2] 6766.780105  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[3] 9535.999697  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[4] 15583.962253  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[5] 5746.661538  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[6] 12716.793538  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[7] 13924.622599  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[8] 32272.210547  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[9] 7362.817655  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+
+Train Scores:
+	Mean RMSE: 1401.066603
+	STD RMSE: 96.634897
+	Mean R Squared: 0.9974391251589774
+	STD R Squared: 0.000365
+	RMSE SCORES:
+		[0] 1575.397822  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[1] 1260.584999  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[2] 1293.589191  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[3] 1425.088762  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[4] 1464.495676  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[5] 1395.775746  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[6] 1407.628422  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[7] 1477.332654  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[8] 1263.071845  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+		[9] 1447.700914  {'max_iter': 500, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01, 'learning_rate': 'constant', 'early_stopping': True}
+************************************************************************

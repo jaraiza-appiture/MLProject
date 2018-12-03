@@ -1,0 +1,4 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: MLP 9-12Cr reduced Final max iter 200 solver sgd
+Size of Dataset:  1757

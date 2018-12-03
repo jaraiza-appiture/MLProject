@@ -1,0 +1,52 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: RandForests 9-12Cr reduced Final max iter 200 solver sgd
+Size of Dataset:  1757
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'n_estimators': 325, 'n_jobs': -1}
+	Preprocessing: Standard Scaler
+Stats:
+	Ocurrence: 10
+	Frequency: 1.000000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 15326.320342
+	STD RMSE: 4116.587704
+	Mean R Squared: 0.709175604227971
+	STD R Squared: 0.074502
+	RMSE SCORES:
+		[0] 8727.338772  {'n_estimators': 325, 'n_jobs': -1}
+		[1] 9902.486319  {'n_estimators': 325, 'n_jobs': -1}
+		[2] 12612.421190  {'n_estimators': 325, 'n_jobs': -1}
+		[3] 14715.532973  {'n_estimators': 325, 'n_jobs': -1}
+		[4] 18161.815681  {'n_estimators': 325, 'n_jobs': -1}
+		[5] 18785.257366  {'n_estimators': 325, 'n_jobs': -1}
+		[6] 23188.961330  {'n_estimators': 325, 'n_jobs': -1}
+		[7] 17679.824715  {'n_estimators': 325, 'n_jobs': -1}
+		[8] 14145.056602  {'n_estimators': 325, 'n_jobs': -1}
+		[9] 15344.508469  {'n_estimators': 325, 'n_jobs': -1}
+
+Train Scores:
+	Mean RMSE: 5817.466783
+	STD RMSE: 165.004888
+	Mean R Squared: 0.9699479103847622
+	STD R Squared: 0.001164
+	RMSE SCORES:
+		[0] 6114.080336  {'n_estimators': 325, 'n_jobs': -1}
+		[1] 5814.630217  {'n_estimators': 325, 'n_jobs': -1}
+		[2] 5842.968747  {'n_estimators': 325, 'n_jobs': -1}
+		[3] 5938.837030  {'n_estimators': 325, 'n_jobs': -1}
+		[4] 5692.767184  {'n_estimators': 325, 'n_jobs': -1}
+		[5] 5707.446214  {'n_estimators': 325, 'n_jobs': -1}
+		[6] 5536.310553  {'n_estimators': 325, 'n_jobs': -1}
+		[7] 5702.535704  {'n_estimators': 325, 'n_jobs': -1}
+		[8] 6036.853637  {'n_estimators': 325, 'n_jobs': -1}
+		[9] 5788.238206  {'n_estimators': 325, 'n_jobs': -1}
+************************************************************************

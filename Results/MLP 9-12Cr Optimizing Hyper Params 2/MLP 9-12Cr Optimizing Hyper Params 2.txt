@@ -1,0 +1,290 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: MLP 9-12Cr Optimizing Hyper Params 2
+Size of Dataset:  1739
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1270.3125779896025
+	Test Score:
+		Mean RMSE:  27917.41899000727
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1342.8701794955891
+	Test Score:
+		Mean RMSE:  30002.038310461845
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1325.0387395965367
+	Test Score:
+		Mean RMSE:  13227.124216024542
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1378.6057208486804
+	Test Score:
+		Mean RMSE:  13391.840085734098
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1330.8255612795667
+	Test Score:
+		Mean RMSE:  16706.418402248608
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1268.1401919983564
+	Test Score:
+		Mean RMSE:  18269.557557045122
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1396.0196029434703
+	Test Score:
+		Mean RMSE:  15437.191286976746
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1288.6775677537796
+	Test Score:
+		Mean RMSE:  19293.01424829418
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1384.2194342455723
+	Test Score:
+		Mean RMSE:  15481.225874631858
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1288.4631461949787
+	Test Score:
+		Mean RMSE:  15675.288710707047
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1442.6477352323038
+	Test Score:
+		Mean RMSE:  15016.149010105262
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1321.4289773670876
+	Test Score:
+		Mean RMSE:  17099.797623745057
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1350.8838661096743
+	Test Score:
+		Mean RMSE:  15206.628320634165
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1426.7513702728215
+	Test Score:
+		Mean RMSE:  15318.442175981754
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1530.6166843904907
+	Test Score:
+		Mean RMSE:  15130.123295360152
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1489.6784610844218
+	Test Score:
+		Mean RMSE:  15327.441592886604
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1368.1872839676148
+	Test Score:
+		Mean RMSE:  13547.095804600342
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1280.0062378781336
+	Test Score:
+		Mean RMSE:  14032.788078568763
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Inner Cross Val Results ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1411.471557924289
+	Test Score:
+		Mean RMSE:  13510.373642483286
+************************************************************************
+
+Params:
+	Model: [{'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}]
+	Preprocessing: [{'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}]
+Results:
+	Train Score:
+		Mean RMSE:  1335.7593724641513
+	Test Score:
+		Mean RMSE:  15466.753500390982
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}
+	Preprocessing: {'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+Stats:
+	Ocurrence: 6
+	Frequency: 0.600000
+************************************************************************
+
+Params:
+	Model: {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs'}
+	Preprocessing: {'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+Stats:
+	Ocurrence: 4
+	Frequency: 0.400000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 14046.127718
+	STD RMSE: 11495.245256
+	Mean R Squared: 0.7955618289411304
+	STD R Squared: 0.207894
+	RMSE SCORES:
+		[0] 7251.507920  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[1] 10828.176821  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[2] 7746.493035  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[3] 12177.898375  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[4] 14813.018385  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[5] 5902.298900  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[6] 14292.406109  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[7] 12784.407422  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[8] 47333.647423  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[9] 7331.422786  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+
+Train Scores:
+	Mean RMSE: 1578.519549
+	STD RMSE: 130.661407
+	Mean R Squared: 0.9967447153735993
+	STD R Squared: 0.000534
+	RMSE SCORES:
+		[0] 1553.678233  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[1] 1515.167716  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[2] 1871.144939  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[3] 1646.084896  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[4] 1575.013647  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[5] 1645.691725  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[6] 1555.011655  {'activation': 'relu', 'early_stopping': False, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[7] 1472.126083  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[8] 1614.081618  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+		[9] 1337.194979  {'activation': 'relu', 'early_stopping': True, 'learning_rate': 'adaptive', 'max_iter': 400, 'solver': 'lbfgs', 'tr_scaler': <class 'sklearn.preprocessing.data.StandardScaler'>}
+************************************************************************

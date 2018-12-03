@@ -24,7 +24,7 @@ from sklearn.utils import shuffle
 
 import matplotlib
 import matplotlib.pyplot as plt
-np.random.seed(42)
+#np.random.seed()
 
 # To plot pretty figures
 plt.rcParams['axes.labelsize'] = 14
@@ -734,22 +734,22 @@ class CrossVal():
             test_predictors,test_labels = self.__split(test_data)
 
             # optimize model hyperparams
-            if self.__apply:
-                self.__paramOptimizer.optimize(train_data,train_applyData)
-            else:
-                self.__paramOptimizer.optimize(train_data)
-            hy_params = self.__paramOptimizer.best_combo['hyper_params']
-            tr_params = self.__paramOptimizer.best_combo['transform_params']
-            params = {}
-            params.update(hy_params)
-            params.update(tr_params)
-            print('Optimized Model params:',hy_params)
-            print('Optimized Preprocessing params:',tr_params)
-            model = self.__estimator(**hy_params)
+            # if self.__apply:
+            #     self.__paramOptimizer.optimize(train_data,train_applyData)
+            # else:
+            #     self.__paramOptimizer.optimize(train_data)
+            # hy_params = self.__paramOptimizer.best_combo['hyper_params']
+            # tr_params = self.__paramOptimizer.best_combo['transform_params']
+            # params = {}
+            # params.update(hy_params)
+            # params.update(tr_params)
+            # print('Optimized Model params:',hy_params)
+            # print('Optimized Preprocessing params:',tr_params)
+            model = self.__estimator(**self.__model_param_grid)
             self.combos.append(self.__paramOptimizer.best_combo)
 
             # scale with Standard Scaler or MinMax Scaler
-            scaler = tr_params['tr_scaler']()
+            scaler = StandardScaler()#tr_params['tr_scaler']()
             scaler.fit(train_predictors)
             train_predictors = scaler.transform(train_predictors)
             test_predictors = scaler.transform(test_predictors)
@@ -800,11 +800,11 @@ class CrossVal():
                 test_scores['labels'] += list(test_labels)
             else:
                 test_scores['rmse'][0].append(test_rmsef)
-                test_scores['rmse'][1].append(params)
+                #test_scores['rmse'][1].append(params)
                 test_scores['r_squared'].append(r2score(test_predictions,test_labels))
 
             train_scores['rmse'][0].append(train_rmsef)
-            train_scores['rmse'][1].append(params)
+            #train_scores['rmse'][1].append(params)
             train_scores['r_squared'].append(r2score(train_predictions,train_labels))
 
         if self.__looCV or (len(self.__data)/self.__cv) < 10:
@@ -837,10 +837,10 @@ class CrossVal():
         for combo_,ocur_,freq_ in comboStats[:stopper]:
             print('\nParams:')
             print('\nParams:',file=self.__file_)
-            print('\tModel: %s'%(combo_['hyper_params']))
-            print('\tModel: %s'%(combo_['hyper_params']),file=self.__file_)
-            print('\tPreprocessing: %s'%(combo_['transform_params']))
-            print('\tPreprocessing: %s'%(combo_['transform_params']),file=self.__file_)
+            print('\tModel: %s'%(self.__model_param_grid))
+            print('\tModel: %s'%(self.__model_param_grid),file=self.__file_)
+            print('\tPreprocessing: %s'%('Standard Scaler'))
+            print('\tPreprocessing: %s'%('Standard Scaler'),file=self.__file_)
             print('Stats:')
             print('Stats:',file=self.__file_)
             print('\tOcurrence: %d'%(ocur_))
@@ -874,8 +874,8 @@ class CrossVal():
             print('\tRMSE SCORES:')
             print('\tRMSE SCORES:',file=self.__file_)
             for rmse_in in range(len(test_rmse)):
-                print('\t\t[%d] %f  %s'%(rmse_in,test_rmse[rmse_in],params_rmse[rmse_in]))
-                print('\t\t[%d] %f  %s'%(rmse_in,test_rmse[rmse_in],params_rmse[rmse_in]),file=self.__file_)
+                print('\t\t[%d] %f  %s'%(rmse_in,test_rmse[rmse_in],self.__model_param_grid))
+                print('\t\t[%d] %f  %s'%(rmse_in,test_rmse[rmse_in],self.__model_param_grid),file=self.__file_)
         print('\nTrain Scores:')
         print('\nTrain Scores:',file=self.__file_)
         print('\tMean RMSE: %f'%(train_scores['mean_rmse']))
@@ -890,12 +890,13 @@ class CrossVal():
         print('\tRMSE SCORES:')
         print('\tRMSE SCORES:',file=self.__file_)
         for rmse_in in range(len(train_rmse)):
-            print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],params_rmse[rmse_in]))
-            print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],params_rmse[rmse_in]),file=self.__file_)
+            print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],self.__model_param_grid))
+            print('\t\t[%d] %f  %s'%(rmse_in,train_rmse[rmse_in],self.__model_param_grid),file=self.__file_)
         print('************************************************************************')
         print('************************************************************************',file=self.__file_)
 
         return test_scores['mean_rmse'], test_scores['std_rmse'], test_scores['mean_r_squared'], test_scores['std_r_squared']
+
 class AlloyModelEval():
     '''
     DESCRIPTION: Tests model performance on a given dataset using cross validation and inner grid search cross validation.
@@ -1287,7 +1288,7 @@ class Backward_Selection():
                                 model_param_grid=self.m_pg,
                                 tran_param_grid=self.t_pg,
                                 cv=10,
-                                gscv=5
+                                gscv=2
                                 )
 
     def select(self):
@@ -1360,7 +1361,7 @@ if __name__ == "__main__":
                     'Temper3','ID','Hf','Homo','Re','Ta','Ti','O']
 
     # New Exclude based on Backward Selection
-    dropna9_12Cr_reduced = ['CT Temp','CS','RT','EL','RA_2']
+    dropna9_12Cr_reduced = ['CT Temp','CS','RT','RA_2']
 
     exclude9_12Cr_reduced = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
                              'UTS','Elong',
@@ -1456,23 +1457,23 @@ if __name__ == "__main__":
 
 
     #~~~~~~~~~~~~~~BACKWARDS SELECTION~~~~~~~~~~~~~~~~~~~~~~~
-    # Multi-Layer Perceptron Neural Network Regression
+    # # Multi-Layer Perceptron Neural Network Regression
     # t_pg = [{'tr_scaler':[StandardScaler]}]
-    # #! Model Param Grid
-    # # m_pg = {'max_iter':[250,300,350,400],
-    # #         'activation':['relu'],
-    # #         'solver':['lbfgs'],
-    # #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
-    # #         'learning_rate':['constant','invscaling','adaptive']}
-
-    # m_pg = {'max_iter':[300],
+    #! Model Param Grid
+    # m_pg = {'max_iter':[250,300,350,400],
     #         'activation':['relu'],
     #         'solver':['lbfgs'],
-    #         'alpha':[0.01],
-    #         'learning_rate':['adaptive']
-    #        }
+    #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
+    #         'learning_rate':['constant','invscaling','adaptive']}
 
-    # bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg')
+    # m_pg = {'max_iter':500,
+    #         'activation':'relu',
+    #         'solver':'lbfgs',
+    #         'alpha':0.01,
+    #         'learning_rate':'adaptive',
+    #         'early_stopping':True}
+
+    # bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg 2')
     # print(bs.select())
 
 
@@ -1486,21 +1487,82 @@ if __name__ == "__main__":
     #    verbose=False, warm_start=False)
 
     # Multi-Layer Perceptron Neural Network Regression
-    t_pg = [{'tr_scaler':[StandardScaler]}]
-    # #! Model Param Grid
-    m_pg = {'max_iter':[250,300,350,400],
-            'activation':['relu'],
-            'solver':['lbfgs','sgd','adam'],
-            'alpha':[0.0001,0.001,0.01,0.1,1,10],
-            'learning_rate':['adaptive']}
+    # t_pg = [{'tr_scaler':[StandardScaler]}]
+    # # # #! Model Param Grid
+    # # m_pg = {'max_iter':200,
+    # #         'activation':'relu',
+    # #         'solver':'lbfgs',
+    # #         'alpha':0.01,
+    # #         'early_stopping':True}
+    # m_pg = {'n_estimators':325,'n_jobs':-1}
+
+    # Evaluator = AlloyModelEval(eval_name='RandForests 9-12Cr reduced Final max iter 200 solver sgd',#Give this test a name
+    #                         estimator=RandomForestRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         cv=10,
+    #                         gscv=5
+    #                         )
+    # Evaluator.perform_validation()
 
 
-    Evaluator = AlloyModelEval(eval_name='MLP 9-12Cr Optimizing Hyper Params',#Give this test a name
-                            estimator=MLPRegressor,#Give it an ML algorithm to use
-                            alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
-                            model_param_grid=m_pg,#Give it parameter values to try
-                            tran_param_grid=t_pg,#Give it scalers to try
-                            cv=10,
-                            gscv=5
-                            )
-    Evaluator.perform_validation()
+    ##########################################################################################################
+    # Graphs
+    Data = N9_12Cr.prep_it_split()
+    Data['preds']['RT'] = Data['labels']
+    E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    E80DL = E80D['RT']
+    E80D = E80D.drop(['RT'],axis=1)
+    T20DL = T20D['RT']
+    T20D = T20D.drop(['RT'],axis=1)
+
+    scaler = StandardScaler()
+    scaler.fit(E80D)
+    E80D = scaler.transform(E80D)
+    T20D = scaler.transform(T20D)
+    # m_pg = {'max_iter':5000,
+    #             'activation':'relu',
+    #             'solver':'lbfgs',
+    #             'alpha':0.01,
+    #             'learning_rate':'adaptive',
+    #             'early_stopping':True}
+    # m = MLPRegressor(**m_pg)
+    # m.fit(E80D,E80DL)
+    # results = m.predict(T20D)
+
+    # results = pd.Series(results,index=T20DL.index)
+
+    # r_sq=r2_score(results,T20DL)
+
+    # plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    # lim = int(max(max(results),max(T20DL)))+1
+    # plt.scatter(results,T20DL)
+    # plt.xlabel('Predicted RT')
+    # plt.ylabel('Actual RT')
+    # plt.xlim(0,lim)
+    # plt.ylim(0,lim)
+    # y = np.linspace(0, lim, 100)
+    # x = y
+    # plt.plot(x,y,c='r')
+    # plt.legend(['R^2: %.2f'%(r_sq)])
+    # save_fig('9-12Cr MLP Test 2 reduced max iter 5000')
+
+    ##########################################Keras work################
+    # from keras.models import Sequential
+    # from keras.layers import Dense
+    # #print(len(list(np.transpose(E80D))))
+    # #E80D=np.transpose(E80D)
+    # #print(E80DL.shape)
+    # #data = np.loadtxt("data.csv",delimiter=",")
+    # #X = data[:,0:8]
+    # #Y = data[:,8]
+    # model = Sequential()
+    # model.add(Dense(100,input_dim=20,activation='relu'))
+    # model.add(Dense(32,activation='relu'))
+    # model.add(Dense(1,activation='sigmoid'))
+
+    # model.compile(loss='mean_squared_error',optimizer='sgd',metrics=['accuracy'])
+    # model.fit(E80D,E80DL,epochs=200,batch_size=10)
+    # scores = model.evaluate(E80D,E80DL)
+    # print("\n%s: %.2f%%"%(model.metrics_names[1],scores[1]*100))
