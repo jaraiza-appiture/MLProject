@@ -170,8 +170,10 @@ if __name__ == "__main__":
     x2 = np.zeros((352, 3))
 
     r = ensemble.RandomForestRegressor(n_estimators=300,n_jobs=-1)
-    g = ensemble.GradientBoostingRegressor(learning_rate=0.25, max_depth=4, n_estimators= 325)
-    nn = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    g = ensemble.GradientBoostingRegressor(learning_rate=0.20, max_depth=5, n_estimators= 325)
+    # r = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    # g = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn = MLPRegressor(max_iter=300,alpha=0.01,solver='lbfgs',activation='relu')
 
     # r_predictions_train = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
     x[:,0] = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
