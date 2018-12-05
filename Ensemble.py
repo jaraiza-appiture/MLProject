@@ -166,14 +166,15 @@ if __name__ == "__main__":
     TrainP = scaler.transform(TrainP)
     TestP = scaler.transform(TestP)
 
-    x = np.zeros((1405, 3))
-    x2 = np.zeros((352, 3))
+    x = np.zeros((1405, 4))
+    x2 = np.zeros((352, 4))
 
     r = ensemble.RandomForestRegressor(n_estimators=300,n_jobs=-1)
     g = ensemble.GradientBoostingRegressor(learning_rate=0.20, max_depth=5, n_estimators= 325)
     # r = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
     # g = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
     nn = MLPRegressor(max_iter=300,alpha=0.01,solver='lbfgs',activation='relu')
+    l = linear_model.LinearRegression()
 
     # r_predictions_train = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
     x[:,0] = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
@@ -181,6 +182,8 @@ if __name__ == "__main__":
     x[:,1] = Stacker(g).fit_transform(TrainP,TrainL)[:,0]
     # nn_predictions_train = Stacker(nn).fit_transform(TrainP,TrainL)[:,0]
     x[:,2] = Stacker(nn).fit_transform(TrainP,TrainL)[:,0]
+
+    x[:,3] = Stacker(l).fit_transform(TrainP,TrainL)[:,0]
 
     u = linear_model.LinearRegression().fit(x[:,:],TrainL)
 
@@ -191,6 +194,8 @@ if __name__ == "__main__":
 
     # nn_predictions_test = Stacker(nn).fit(TrainP,TrainL).transform(TestP)
     x2[:,2] = Stacker(nn).fit(TrainP,TrainL).transform(TestP)
+
+    x2[:,3] = Stacker(l).fit(TrainP,TrainL).transform(TestP)
 
     print(metrics.r2_score(TestL,u.predict(x2[:,:])))
 
