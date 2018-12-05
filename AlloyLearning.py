@@ -1081,6 +1081,7 @@ class AlloyModelEval():
         else:
             label_name = self.__alloy_data['labels'].name
             pred_label_data = self.__alloy_data['preds']
+            print("Name: "+label_name)
             pred_label_data[label_name] = self.__alloy_data['labels']
             print('Size of Dataset: ',len(pred_label_data))
             print('Size of Dataset: ',len(pred_label_data),file=fileE)
@@ -1368,6 +1369,15 @@ if __name__ == "__main__":
                              'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                              'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
                              'P','AGS No.','Ni','EL','AGS','Nb'] #new drops
+    dropna9_12Cr_reduced2 = ['CT Temp','CS','RT','RA_2','EL']
+
+    exclude9_12Cr_reduced2 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+                              'UTS','Elong',
+                              'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
+                              'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
+                              'Fe', 'C', 'Cr', 'Mn', 'Si', 'Ni', 'Co', 'Mo', 'W', 'Nb', 'Al', 'P',
+                              'Cu', 'V', 'B', 'N', 'S', 'Normal', 'Temper1', 'Temper2', 'AGS No.',
+                              'AGS'] #new drops
 
 
 
@@ -1509,18 +1519,18 @@ if __name__ == "__main__":
 
     ##########################################################################################################
     # Graphs
-    Data = N9_12Cr.prep_it_split()
-    Data['preds']['RT'] = Data['labels']
-    E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
-    E80DL = E80D['RT']
-    E80D = E80D.drop(['RT'],axis=1)
-    T20DL = T20D['RT']
-    T20D = T20D.drop(['RT'],axis=1)
+    # Data = N9_12Cr.prep_it_split()
+    # Data['preds']['RT'] = Data['labels']
+    # E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    # E80DL = E80D['RT']
+    # E80D = E80D.drop(['RT'],axis=1)
+    # T20DL = T20D['RT']
+    # T20D = T20D.drop(['RT'],axis=1)
 
-    scaler = StandardScaler()
-    scaler.fit(E80D)
-    E80D = scaler.transform(E80D)
-    T20D = scaler.transform(T20D)
+    # scaler = StandardScaler()
+    # scaler.fit(E80D)
+    # E80D = scaler.transform(E80D)
+    # T20D = scaler.transform(T20D)
     # m_pg = {'max_iter':5000,
     #             'activation':'relu',
     #             'solver':'lbfgs',
@@ -1566,3 +1576,41 @@ if __name__ == "__main__":
     # model.fit(E80D,E80DL,epochs=200,batch_size=10)
     # scores = model.evaluate(E80D,E80DL)
     # print("\n%s: %.2f%%"%(model.metrics_names[1],scores[1]*100))
+
+
+    ##### New Feature selection ####
+    m_pg ={'n_estimators':300}# {'max_iter':400,
+    #             'activation':'relu',
+    #             'solver':'lbfgs',
+    #             'alpha':0.001,
+    #             }
+    t_pg = [{'tr_scaler':[StandardScaler]}]
+    # from sklearn.feature_selection import SelectFromModel
+    # reg = RandomForestRegressor()
+    # Data = N9_12Cr.prep_it_split()
+    # X = Data['preds']
+    # print(X.columns)
+    # print("type: "+str(type(X)))
+    # Y = Data['labels']
+    # print("Before: "+str(X.shape))
+    # reg.fit(X,Y)
+    # model = SelectFromModel(reg,prefit=True)
+    # X_new = model.transform(X)
+    # print("type: "+str(type(X_new)))
+    # print("After: "+str(X_new.shape))
+    # print(X_new)
+    # NewData= Data
+    # NewData['preds'] = X_new
+    # NewData['labels'] = Y
+
+    # print("Selected Features:"+str(model.get_support()))
+    # print("Selected Features:"+str(model.get_support(True)))
+    Evaluator = AlloyModelEval(eval_name='RandForest with new Feat Select',#Give this test a name
+                            estimator=RandomForestRegressor,#Give it an ML algorithm to use
+                            alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+                            model_param_grid=m_pg,#Give it parameter values to try
+                            tran_param_grid=t_pg,#Give it scalers to try
+                            cv=10,
+                            gscv=5
+                            )
+    Evaluator.perform_validation()

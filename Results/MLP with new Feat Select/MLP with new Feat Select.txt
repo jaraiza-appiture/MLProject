@@ -1,0 +1,52 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: MLP with new Feat Select
+Size of Dataset:  1757
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+	Preprocessing: Standard Scaler
+Stats:
+	Ocurrence: 10
+	Frequency: 1.000000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 15167.949882
+	STD RMSE: 12763.765485
+	Mean R Squared: 0.7730525033165485
+	STD R Squared: 0.234593
+	RMSE SCORES:
+		[0] 6994.266363  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[1] 51893.509268  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[2] 21281.782626  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[3] 9290.862891  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[4] 11132.989078  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[5] 9904.195378  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[6] 9727.239372  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[7] 9300.520873  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[8] 10798.275642  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[9] 11355.857327  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+
+Train Scores:
+	Mean RMSE: 1728.394312
+	STD RMSE: 150.352376
+	Mean R Squared: 0.996062042186769
+	STD R Squared: 0.000697
+	RMSE SCORES:
+		[0] 1775.460075  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[1] 1890.358453  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[2] 1864.320838  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[3] 1666.858635  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[4] 1752.949114  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[5] 1922.228930  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[6] 1559.745569  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[7] 1835.775609  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[8] 1499.143691  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+		[9] 1517.102203  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.001}
+************************************************************************

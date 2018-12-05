@@ -1,0 +1,52 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: RandForest with new Feat Select
+Size of Dataset:  1757
+
+
+(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))
+
+Params:
+	Model: {'n_estimators': 300}
+	Preprocessing: Standard Scaler
+Stats:
+	Ocurrence: 10
+	Frequency: 1.000000
+************************************************************************
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 15002.430595
+	STD RMSE: 2659.621650
+	Mean R Squared: 0.7337553500292247
+	STD R Squared: 0.078142
+	RMSE SCORES:
+		[0] 12832.323991  {'n_estimators': 300}
+		[1] 13010.521244  {'n_estimators': 300}
+		[2] 14059.731295  {'n_estimators': 300}
+		[3] 11075.167124  {'n_estimators': 300}
+		[4] 20886.421546  {'n_estimators': 300}
+		[5] 17091.631708  {'n_estimators': 300}
+		[6] 14081.718309  {'n_estimators': 300}
+		[7] 16139.072049  {'n_estimators': 300}
+		[8] 16884.295447  {'n_estimators': 300}
+		[9] 13963.423232  {'n_estimators': 300}
+
+Train Scores:
+	Mean RMSE: 5795.343856
+	STD RMSE: 185.051888
+	Mean R Squared: 0.9705041897334279
+	STD R Squared: 0.001392
+	RMSE SCORES:
+		[0] 5936.648902  {'n_estimators': 300}
+		[1] 6022.804741  {'n_estimators': 300}
+		[2] 5748.089577  {'n_estimators': 300}
+		[3] 5929.201511  {'n_estimators': 300}
+		[4] 5414.629836  {'n_estimators': 300}
+		[5] 5513.028128  {'n_estimators': 300}
+		[6] 5783.332926  {'n_estimators': 300}
+		[7] 5909.104562  {'n_estimators': 300}
+		[8] 5788.107942  {'n_estimators': 300}
+		[9] 5908.490439  {'n_estimators': 300}
+************************************************************************
