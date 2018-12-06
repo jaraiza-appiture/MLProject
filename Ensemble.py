@@ -3,12 +3,14 @@ from sklearn import cross_validation
 from sklearn import ensemble
 from sklearn import metrics
 from sklearn.neural_network import MLPRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 from sklearn.utils import shuffle
 import sklearn
 import pandas
+import matplotlib.pyplot as plt
+import os
 pandas.set_option('display.max_rows', None)
 RESULTS_PATH = '/home/jovan/Documents/CS475/MLProject/Results'
 
@@ -78,6 +80,34 @@ class Stacker(object):
 
     def _test_transform(self, x):
         return self._pred.predict(x)
+#Other utility functions
+def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300,location=RESULTS_PATH):
+    '''
+    DESCRIPTION: Saves figure created using matplotlib.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    PARAMETERS:
+
+        fig_id : str
+            Name of figure
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        tight_layout : bool
+            ***
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        fig_extension : str [default='png']
+            ***
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        resolution : int
+            Resolution of figure.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        location : str [default=RESULTS_PATH]
+            Location to save figure in.
+
+    '''
+    path = os.path.join(location, fig_id + "." + fig_extension)
+    print("Saving figure", fig_id)
+    if tight_layout:
+        plt.tight_layout()
+    plt.savefig(path, format=fig_extension, dpi=resolution)
 
 if __name__ == "__main__":
 
@@ -156,6 +186,14 @@ if __name__ == "__main__":
     TestL = TestP['RT'].values
     TestP = TestP.drop(['RT'],axis=1).values
 
+
+    # Data = N9_12Cr.prep_it_split()
+    # Data['preds']['RT'] = Data['labels']
+    # DFTrainP,DFTestP = train_test_split(Data['preds'],test_size=0.20)
+    # DFTrainL = DFTrainP['RT']
+    # DFTrainP = DFTrainP.drop(['RT'],axis=1)
+    # DFTestL = DFTestP['RT']
+    # DFTestP = DFTestP.drop(['RT'],axis=1)
     # print("Train Preds:")
     # print(TrainP.head(100))
     # print("Train Labels:")
@@ -166,36 +204,74 @@ if __name__ == "__main__":
     TrainP = scaler.transform(TrainP)
     TestP = scaler.transform(TestP)
 
-    x = np.zeros((1405, 4))
-    x2 = np.zeros((352, 4))
+    # x = np.zeros((1405, 3))
+    # x2 = np.zeros((352, 3))
 
-    r = ensemble.RandomForestRegressor(n_estimators=300,n_jobs=-1)
-    g = ensemble.GradientBoostingRegressor(learning_rate=0.20, max_depth=5, n_estimators= 325)
+    x = np.zeros((TrainP.shape[0], 10))
+    x2 = np.zeros((TestP.shape[0], 10))
+
+    # pg_r = {'n_estimators':[200,250,300,350,400,450,500],'n_jobs':[-1]}
+    # rGCV = GridSearchCV(ensemble.RandomForestRegressor(),pg_r,cv=5)
+    # rGCV.fit(TrainP,TrainL)
+
+    # pg_gb = {'learning_rate':[0.10,0.15,0.20,0.25,0.30],'max_depth':[3,4,5,6],'n_estimators':[200,250,300,350,400,450,500]}
+    # gbGCV = GridSearchCV(ensemble.GradientBoostingRegressor(),pg_gb,cv=5)
+    # gbGCV.fit(TrainP,TrainL)
+
+    # pg_nn = {'max_iter':[200,250,300,350,400,450,500],'alpha':[0.1,0.01,0.001,0.0001],'solver':['lbfgs'],'activation':['relu']}
+    # nnGCV = GridSearchCV(MLPRegressor(),pg_nn,cv=5)
+    # nnGCV.fit(TrainP,TrainL)
+
+    # r = ensemble.RandomForestRegressor()
+    # g = ensemble.GradientBoostingRegressor(**gbGCV.best_params_)
     # r = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
-    # g = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
-    nn = MLPRegressor(max_iter=300,alpha=0.01,solver='lbfgs',activation='relu')
-    l = linear_model.LinearRegression()
+    nn1 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn2 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn3 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn4 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn5 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn6 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn7 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn8 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn9 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
+    nn10 = MLPRegressor(max_iter=400,alpha=0.01,solver='lbfgs',activation='relu')
 
-    # r_predictions_train = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
-    x[:,0] = Stacker(r).fit_transform(TrainP,TrainL)[:,0]
-
-    x[:,1] = Stacker(g).fit_transform(TrainP,TrainL)[:,0]
-    # nn_predictions_train = Stacker(nn).fit_transform(TrainP,TrainL)[:,0]
-    x[:,2] = Stacker(nn).fit_transform(TrainP,TrainL)[:,0]
-
-    x[:,3] = Stacker(l).fit_transform(TrainP,TrainL)[:,0]
+    x[:,0] = Stacker(nn1).fit_transform(TrainP,TrainL)[:,0]
+    x[:,1] = Stacker(nn2).fit_transform(TrainP,TrainL)[:,0]
+    x[:,2] = Stacker(nn3).fit_transform(TrainP,TrainL)[:,0]
+    x[:,3] = Stacker(nn4).fit_transform(TrainP,TrainL)[:,0]
+    x[:,4] = Stacker(nn5).fit_transform(TrainP,TrainL)[:,0]
+    x[:,5] = Stacker(nn6).fit_transform(TrainP,TrainL)[:,0]
+    x[:,6] = Stacker(nn7).fit_transform(TrainP,TrainL)[:,0]
+    x[:,7] = Stacker(nn8).fit_transform(TrainP,TrainL)[:,0]
+    x[:,8] = Stacker(nn9).fit_transform(TrainP,TrainL)[:,0]
+    x[:,9] = Stacker(nn10).fit_transform(TrainP,TrainL)[:,0]
 
     u = linear_model.LinearRegression().fit(x[:,:],TrainL)
 
-    # r_predictions_test = Stacker(r).fit(TrainP,TrainL).transform(TestP)
-    x2[:,0] = Stacker(r).fit(TrainP,TrainL).transform(TestP)
+    x2[:,0] = Stacker(nn1).fit(TrainP,TrainL).transform(TestP)
+    x2[:,1] = Stacker(nn2).fit(TrainP,TrainL).transform(TestP)
+    x2[:,2] = Stacker(nn3).fit(TrainP,TrainL).transform(TestP)
+    x2[:,3] = Stacker(nn4).fit(TrainP,TrainL).transform(TestP)
+    x2[:,4] = Stacker(nn5).fit(TrainP,TrainL).transform(TestP)
+    x2[:,5] = Stacker(nn6).fit(TrainP,TrainL).transform(TestP)
+    x2[:,6] = Stacker(nn7).fit(TrainP,TrainL).transform(TestP)
+    x2[:,7] = Stacker(nn8).fit(TrainP,TrainL).transform(TestP)
+    x2[:,8] = Stacker(nn9).fit(TrainP,TrainL).transform(TestP)
+    x2[:,9] = Stacker(nn10).fit(TrainP,TrainL).transform(TestP)
 
-    x2[:,1] = Stacker(g).fit(TrainP,TrainL).transform(TestP)
+    results = u.predict(x2[:,:])
+    r_sq = metrics.r2_score(TestL,results)
 
-    # nn_predictions_test = Stacker(nn).fit(TrainP,TrainL).transform(TestP)
-    x2[:,2] = Stacker(nn).fit(TrainP,TrainL).transform(TestP)
-
-    x2[:,3] = Stacker(l).fit(TrainP,TrainL).transform(TestP)
-
-    print(metrics.r2_score(TestL,u.predict(x2[:,:])))
-
+    plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    lim = int(max(max(results),max(TestL)))+1
+    plt.scatter(results,TestL)
+    plt.xlabel('Predicted RT')
+    plt.ylabel('Actual RT')
+    plt.xlim(0,lim)
+    plt.ylim(0,lim)
+    y = np.linspace(0, lim, 100)
+    x = y
+    plt.plot(x,y,c='r')
+    plt.legend(['R^2: %.2f'%(r_sq)])
+    save_fig('Multiple Learners same')
