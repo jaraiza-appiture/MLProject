@@ -1,0 +1,1722 @@
+back_select MLPReg
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Dropping: Si
+Current Min Mean RMSE: 10989.601128617422
+Current Min Mean R2: 0.8733052272223325
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Dropping: B
+Current Min Mean RMSE: 10422.613813448097
+Current Min Mean R2: 0.8783983361281379
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select MLPReg
+Name: RT
+Size of Dataset:  1489
+Final results:
+Min Mean RMSE: 10422.613813448097
+Min Mean r2: 0.8783983361281379
+(10422.613813448097, 0.8783983361281379, ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS', 'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS', '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo', 'Re', 'Ta', 'Ti', 'O', 'Si', 'B'])
+back_select GradientBoostingRegressor
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Dropping: EL
+Current Min Mean RMSE: 13465.534041286193
+Current Min Mean R2: 0.8110277902192381
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Dropping: RA_2
+Current Min Mean RMSE: 11159.303208532703
+Current Min Mean R2: 0.8526993384999051
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Dropping: Nb
+Current Min Mean RMSE: 10821.559756821374
+Current Min Mean R2: 0.8662599767085959
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Dropping: Fe
+Current Min Mean RMSE: 10513.050153081667
+Current Min Mean R2: 0.8708541707252573
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select GradientBoostingRegressor
+Size of Dataset:  1489
+Final results:
+Min Mean RMSE: 10513.050153081667
+Min Mean r2: 0.8708541707252573
+(10513.050153081667, 0.8708541707252573, ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS', 'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS', '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo', 'Re', 'Ta', 'Ti', 'O', 'Si', 'B', 'EL', 'RA_2', 'Nb', 'Fe'])
+back_select RandonForestRegressor
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Dropping: C
+Current Min Mean RMSE: 14859.496278027043
+Current Min Mean R2: 0.7563782748423911
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Dropping: Ni
+Current Min Mean RMSE: 14602.7812778233
+Current Min Mean R2: 0.7563730411357767
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: back_select RandonForestRegressor
+Name: RT
+Size of Dataset:  1489
+Final results:
+Min Mean RMSE: 14602.7812778233
+Min Mean r2: 0.7563730411357767
+(14602.7812778233, 0.7563730411357767, ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS', 'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS', '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo', 'Re', 'Ta', 'Ti', 'O', 'Si', 'B', 'EL', 'RA_2', 'Nb', 'Fe', 'C', 'Ni'])
+Saving figure 9-12Cr MLP Discovery Test
+Saving figure 9-12Cr GradientBoosting Discovery Test
+Saving figure 9-12Cr RandomForests Discovery Test

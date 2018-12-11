@@ -1,0 +1,41 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: Final GB Test
+Size of Dataset:  1489
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 11457.013848
+	STD RMSE: 4159.905770
+	Mean R Squared: 0.8526620487036152
+	STD R Squared: 0.074120
+	RMSE SCORES:
+		[0] 7927.483209  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[1] 9459.188217  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[2] 12596.144399  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[3] 19154.738770  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[4] 9923.871884  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[5] 15644.334054  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[6] 8910.916297  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[7] 16042.646014  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[8] 4572.165940  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[9] 10338.649701  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+
+Train Scores:
+	Mean RMSE: 3395.523819
+	STD RMSE: 190.223914
+	Mean R Squared: 0.9869945392510854
+	STD R Squared: 0.001515
+	RMSE SCORES:
+		[0] 3559.392895  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[1] 3777.381859  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[2] 3299.660749  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[3] 3509.700273  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[4] 3357.240745  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[5] 3555.356714  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[6] 3352.740858  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[7] 3195.210133  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[8] 3180.922175  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[9] 3167.631788  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+************************************************************************

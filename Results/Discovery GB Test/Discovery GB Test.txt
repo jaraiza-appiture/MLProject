@@ -1,0 +1,41 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: Discovery GB Test
+Size of Dataset:  492
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 4744.650788
+	STD RMSE: 2366.674275
+	Mean R Squared: 0.9606169503052879
+	STD R Squared: 0.047525
+	RMSE SCORES:
+		[0] 5325.533964  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[1] 10218.777986  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[2] 2075.117209  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[3] 3458.416795  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[4] 1623.969711  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[5] 4782.827112  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[6] 5448.848557  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[7] 6910.644276  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[8] 3469.984693  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[9] 4132.387573  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+
+Train Scores:
+	Mean RMSE: 7.759428
+	STD RMSE: 0.330271
+	Mean R Squared: 0.9999999048626241
+	STD R Squared: 0.000000
+	RMSE SCORES:
+		[0] 7.373153  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[1] 7.652208  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[2] 7.644809  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[3] 8.341066  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[4] 7.206917  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[5] 8.158388  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[6] 7.809165  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[7] 7.793621  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[8] 7.577316  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+		[9] 8.037637  {'learning_rate': 0.25, 'max_depth': 4, 'n_estimators': 300}
+************************************************************************

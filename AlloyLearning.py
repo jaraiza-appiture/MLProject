@@ -24,7 +24,7 @@ from sklearn.utils import shuffle
 
 import matplotlib
 import matplotlib.pyplot as plt
-#np.random.seed()
+#np.random.seed(42)
 
 # To plot pretty figures
 plt.rcParams['axes.labelsize'] = 14
@@ -148,38 +148,38 @@ class AlloyDataPreper():
 
         return Alloy_Data
 
-    def __stratify_split(self,Alloy_Data):
-        """
-        !!!Disabled/Not Used!!!
+    # def __stratify_split(self,Alloy_Data):
+    #     """
+    #     !!!Disabled/Not Used!!!
 
-        DESCRIPTION: Performs stratified sampling based on strat_col and strat_lim.
-        Splits data into train and test sets.
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        PARAMETERS:
-            Alloy_Data : DataFrame
-                Original data loaded.
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        RETURNS:
-            tuple of DataFrames (DataFrame,DataFrame)
-                train set and test set
+    #     DESCRIPTION: Performs stratified sampling based on strat_col and strat_lim.
+    #     Splits data into train and test sets.
+    #     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    #     PARAMETERS:
+    #         Alloy_Data : DataFrame
+    #             Original data loaded.
+    #     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    #     RETURNS:
+    #         tuple of DataFrames (DataFrame,DataFrame)
+    #             train set and test set
 
-        """
-        CAlloy_Data = Alloy_Data.copy()
-        #Column to Add
-        StratCol = self.__strat_col+'_cat'
-        #Add Strat Column
-        CAlloy_Data[StratCol] = np.ceil(CAlloy_Data[self.__strat_col] / self.__strat_lim)
-        split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+    #     """
+    #     CAlloy_Data = Alloy_Data.copy()
+    #     #Column to Add
+    #     StratCol = self.__strat_col+'_cat'
+    #     #Add Strat Column
+    #     CAlloy_Data[StratCol] = np.ceil(CAlloy_Data[self.__strat_col] / self.__strat_lim)
+    #     split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 
-        #Split
-        for train_index, test_index in split.split(CAlloy_Data, CAlloy_Data[StratCol]):
-            strat_train_set = CAlloy_Data.loc[train_index]
-            strat_test_set = CAlloy_Data.loc[test_index]
-        #remove Strat Column
-        for set_ in (strat_train_set, strat_test_set):
-            set_.drop(StratCol,axis=1,inplace=True)
+    #     #Split
+    #     for train_index, test_index in split.split(CAlloy_Data, CAlloy_Data[StratCol]):
+    #         strat_train_set = CAlloy_Data.loc[train_index]
+    #         strat_test_set = CAlloy_Data.loc[test_index]
+    #     #remove Strat Column
+    #     for set_ in (strat_train_set, strat_test_set):
+    #         set_.drop(StratCol,axis=1,inplace=True)
 
-        return strat_train_set,strat_test_set
+    #     return strat_train_set,strat_test_set
 
     def __load_clean_data(self):
         '''
@@ -281,7 +281,7 @@ class AlloyDataPreper():
         if len(preds) == 0 and ~label:
             return self.__Ready_Data
         if len(self.__Ready_Data) == 0:
-            self.prep_it()
+            self.prep_it_split()
 
         log_Ready_Data= {'preds':None,'labels':None,'name':self.__Ready_Data['name']}
 
@@ -791,7 +791,7 @@ class CrossVal():
                 train_labels  =self.__applyFunc(train_labels,train_applyData)
                 test_labels = self.__applyFunc(test_labels,test_applyData)
 
-            # performance mearsure
+            # performance measure
             test_rmsef = rmsef(test_predictions,test_labels)
             train_rmsef = rmsef(train_predictions,train_labels)
 
@@ -832,23 +832,23 @@ class CrossVal():
         #Print results to terminal and text file
 
         #Combination stats results
-        print('\n\n(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))')
-        print('\n\n(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))',file=self.__file_)
-        for combo_,ocur_,freq_ in comboStats[:stopper]:
-            print('\nParams:')
-            print('\nParams:',file=self.__file_)
-            print('\tModel: %s'%(self.__model_param_grid))
-            print('\tModel: %s'%(self.__model_param_grid),file=self.__file_)
-            print('\tPreprocessing: %s'%('Standard Scaler'))
-            print('\tPreprocessing: %s'%('Standard Scaler'),file=self.__file_)
-            print('Stats:')
-            print('Stats:',file=self.__file_)
-            print('\tOcurrence: %d'%(ocur_))
-            print('\tOcurrence: %d'%(ocur_),file=self.__file_)
-            print('\tFrequency: %f'%(freq_))
-            print('\tFrequency: %f'%(freq_),file=self.__file_)
-            print('************************************************************************')
-            print('************************************************************************',file=self.__file_)
+        # print('\n\n(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))')
+        # print('\n\n(((((((((((((((((((((((((((((((((((((( Combination Stats ))))))))))))))))))))))))))))))))))))))',file=self.__file_)
+        # for combo_,ocur_,freq_ in comboStats[:stopper]:
+        #     print('\nParams:')
+        #     print('\nParams:',file=self.__file_)
+        #     print('\tModel: %s'%(self.__model_param_grid))
+        #     print('\tModel: %s'%(self.__model_param_grid),file=self.__file_)
+        #     print('\tPreprocessing: %s'%('Standard Scaler'))
+        #     print('\tPreprocessing: %s'%('Standard Scaler'),file=self.__file_)
+        #     print('Stats:')
+        #     print('Stats:',file=self.__file_)
+        #     print('\tOcurrence: %d'%(ocur_))
+        #     print('\tOcurrence: %d'%(ocur_),file=self.__file_)
+        #     print('\tFrequency: %f'%(freq_))
+        #     print('\tFrequency: %f'%(freq_),file=self.__file_)
+        #     print('************************************************************************')
+        #     print('************************************************************************',file=self.__file_)
 
         #Model Performance Results
         self.results = {'train_scores':train_scores,'test_scores':test_scores}
@@ -937,14 +937,14 @@ class AlloyModelEval():
             ! Will be used in myGSCV class only for param optimization !
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         apply : bool [default=False]
-            If True, will transform predictons mabe by model and corresponding labels with applyFunc provided.
+            If True, will transform predictions made by model and corresponding labels with applyFunc provided.
 
             !ApplyFunc and DataPreper must be provided!
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         DataPreper : function [default=None]
             Function to combine predictors and labels into on DataFrame and prepare applyData used in applyFunc.
 
-            Must take follwoing parameters:
+            Must take following parameters:
 
                 def DataPreper(alloyData):
                     ...
@@ -1144,7 +1144,7 @@ def max_ocur(combos):
     RETURNS
         list
             list sorted from most frequent to least,
-            with each element containing a tuple of the combination, number of occurences, and frequency
+            with each element containing a tuple of the combination, number of occurrences, and frequency
     '''
     totalcombos = len(combos)
     combo = []
@@ -1254,7 +1254,10 @@ class Backward_Selection():
                 estimator,
                 eval_name,
                 dataset_name='9_12_Cr.csv',
-                label='RT'
+                label='RT',
+                log = False,
+                DataPreper = None,
+                ApplyFunc = None
                 ):
 
         self.fill_vals = fill_vals
@@ -1270,20 +1273,30 @@ class Backward_Selection():
         self.eval_name = eval_name
         self.evaluator = None
 
+        self.log = log
+        self.DataPreper = DataPreper
+        self.ApplyFunc = ApplyFunc
+
     def prepare_data(self):
+
         datapreper = AlloyDataPreper(Dataset=self.dataset_name,
-                            label=self.label,
-                            dropna_cols=self.dropna,
-                            exclude_cols=self.exclude,
-                            fill_vals=self.fill_vals,
-                            )
-        self.data = datapreper.prep_it_split()
+                                label=self.label,
+                                dropna_cols=self.dropna,
+                                exclude_cols=self.exclude,
+                                fill_vals=self.fill_vals,
+                                )
+        if not self.log:
+            self.data = datapreper.prep_it_split()
+        else:
+            self.data = datapreper.log_it(['CS'],label=True)
 
     def get_features(self):
         return self.data['preds'].columns.tolist()
 
     def prepare_evaluator(self):
-        self.evaluator = AlloyModelEval(eval_name=self.eval_name,
+
+        if not self.log:
+            self.evaluator = AlloyModelEval(eval_name=self.eval_name,
                                 estimator=self.estimator,
                                 alloy_data=self.data,
                                 model_param_grid=self.m_pg,
@@ -1291,9 +1304,23 @@ class Backward_Selection():
                                 cv=10,
                                 gscv=2
                                 )
+        else:
+            self.evaluator = AlloyModelEval(eval_name=self.eval_name,
+                                estimator=self.estimator,
+                                alloy_data=self.data,
+                                model_param_grid=self.m_pg,
+                                tran_param_grid=self.t_pg,
+                                apply=True,
+                                DataPreper=self.DataPreper,
+                                applyFunc=self.ApplyFunc,
+                                cv=10,
+                                gscv=2
+                                )
+
 
     def select(self):
         #initial try
+        print(self.eval_name)
         self.prepare_data()
         features = self.get_features()
         self.prepare_evaluator()
@@ -1310,16 +1337,17 @@ class Backward_Selection():
 
         while Thresh < 3:
             for f in features:
-                self.exclude.append(f)
-                self.prepare_data()
-                self.prepare_evaluator()
+                if f != 'log_CS':
+                    self.exclude.append(f)
+                    self.prepare_data()
+                    self.prepare_evaluator()
 
-                reduced_mean_rmse, reduced_std_rmse, reduced_mean_r2, reduced_std_r2 = self.evaluator.perform_validation()
-                if reduced_mean_rmse < next_min_rmse:
-                    final_drop_feat = f
-                    next_min_rmse = reduced_mean_rmse
-                    next_min_r2 = reduced_mean_r2
-                self.exclude.remove(f)
+                    reduced_mean_rmse, reduced_std_rmse, reduced_mean_r2, reduced_std_r2 = self.evaluator.perform_validation()
+                    if reduced_mean_rmse < next_min_rmse:
+                        final_drop_feat = f
+                        next_min_rmse = reduced_mean_rmse
+                        next_min_r2 = reduced_mean_r2
+                    self.exclude.remove(f)
 
             if next_min_rmse < cur_min_rmse:
                 cur_min_rmse = next_min_rmse
@@ -1342,8 +1370,8 @@ if __name__ == "__main__":
 
     #%%
     #******************************9_12Cr****************************************
-    #default values to fill in missiing values for the following features
-    fillvals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
+    #default values to fill in missing values for the following features
+    fill_vals = {'Fe': 0,'C':0,'Cr':0,'Mn':0,
                 'Si':0,'Ni':0,'Co':0,'Mo':0,
                 'W':0,'Nb':0,'Al':0,'P':0,
                 'Cu':0,'Ti':0,'Ta':0,'Hf':0,
@@ -1369,23 +1397,44 @@ if __name__ == "__main__":
                              'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
                              'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
                              'P','AGS No.','Ni','EL','AGS','Nb'] #new drops
-    dropna9_12Cr_reduced2 = ['CT Temp','CS','RT','RA_2','EL']
 
-    exclude9_12Cr_reduced2 = ['MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS',
+    # New Exclude based on Backward Selection from Multi-layer Percepteon Neural Network
+    dropna9_12Cr_MLP = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
+    exclude9_12Cr_MLP = ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS',
+                         'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS',
+                         '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo',
+                         'Re', 'Ta', 'Ti', 'O', 'Si', 'B']
+    # New Exclude based on Backward Selection from Gradient Boosting Regression with Log CS and Log RT
+    dropna9_12Cr_GB = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
+    exclude9_12Cr_GB = ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS',
+                        'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS',
+                        '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo',
+                        'Re', 'Ta', 'Ti', 'O', 'Si', 'B', 'EL', 'RA_2', 'Nb', 'Fe']
+    # New Exclude based on Backward Selection from Random Forests Regression
+    dropna9_12Cr_RF = ['CT Temp','CS','RT','AGS','AGS No.','EL','RA_2']
+    exclude9_12Cr_RF = ['MCR', '0.5% CS', '1.0% CS', '2.0% CS', '5.0% CS',
+                        'UTS', 'Elong', 'TT Temp', 'YS', 'RA', '0.1% CS',
+                        '0.2% CS', 'TTC', 'Temper3', 'ID', 'Hf', 'Homo',
+                        'Re', 'Ta', 'Ti', 'O', 'Si', 'B', 'EL', 'RA_2', 'Nb',
+                        'Fe', 'C', 'Ni']
+
+
+    # With highly Correlated Vars 'MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS'
+    dropna9_12Cr_discovery = ['CT Temp','CS','RT','RA_2','MCR','0.5% CS','1.0% CS','2.0% CS','5.0% CS']
+
+    exclude9_12Cr_discovery = [
                               'UTS','Elong',
                               'TT Temp','YS','RA','0.1% CS','0.2% CS','TTC',
-                              'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
-                              'Fe', 'C', 'Cr', 'Mn', 'Si', 'Ni', 'Co', 'Mo', 'W', 'Nb', 'Al', 'P',
-                              'Cu', 'V', 'B', 'N', 'S', 'Normal', 'Temper1', 'Temper2', 'AGS No.',
-                              'AGS'] #new drops
+                             'Temper3','ID','Hf','Homo','Re','Ta','Ti','O',
+                             'P','AGS No.','Ni','EL','AGS','Nb'] #new drops
 
 
 
     N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',#name of dataset must match name of csv file located in RESULTS_PATH
                             label='RT',
-                            dropna_cols=dropna9_12Cr_reduced,
-                            exclude_cols=exclude9_12Cr_reduced,
-                            fill_vals=fillvals,
+                            dropna_cols=dropna9_12Cr_discovery,
+                            exclude_cols=exclude9_12Cr_discovery,
+                            fill_vals=fill_vals,
                             )
     ready9_12Cr = N9_12Cr.prep_it()
 
@@ -1467,25 +1516,47 @@ if __name__ == "__main__":
 
 
     #~~~~~~~~~~~~~~BACKWARDS SELECTION~~~~~~~~~~~~~~~~~~~~~~~
-    # # Multi-Layer Perceptron Neural Network Regression
+    # Multi-Layer Perceptron Neural Network Regression
     # t_pg = [{'tr_scaler':[StandardScaler]}]
-    #! Model Param Grid
-    # m_pg = {'max_iter':[250,300,350,400],
-    #         'activation':['relu'],
-    #         'solver':['lbfgs'],
-    #         'alpha':[0.0001,0.001,0.01,0.1,1,10],
-    #         'learning_rate':['constant','invscaling','adaptive']}
-
+    # #! Model Param Grid
     # m_pg = {'max_iter':500,
     #         'activation':'relu',
     #         'solver':'lbfgs',
     #         'alpha':0.01,
-    #         'learning_rate':'adaptive',
-    #         'early_stopping':True}
+    #         }
 
-    # bs = Backward_Selection(fillvals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select test MLPReg 2')
+    # bs = Backward_Selection(fill_vals,dropna9_12Cr,exclude9_12Cr,t_pg,m_pg,MLPRegressor,'back_select MLPReg')
     # print(bs.select())
 
+    # # Gradient Booting Regression
+    # m_pg = {'learning_rate':0.25,
+    #         'max_depth':4,
+    #         'n_estimators':300,
+    #         }
+    # bs = Backward_Selection(fill_vals,
+    #                         dropna9_12Cr,
+    #                         exclude9_12Cr,
+    #                         t_pg,m_pg,
+    #                         GradientBoostingRegressor,
+    #                         'back_select GradientBoostingRegressor',
+    #                         log = True,
+    #                         DataPreper = Data_9_12_Preper_log,
+    #                         ApplyFunc = apply_9_12_func_log
+    # )
+    # print(bs.select())
+
+    # # Random Forests Regression
+    # m_pg = {'n_jobs':-1,
+    #         'n_estimators':300,
+    #         }
+    # bs = Backward_Selection(fill_vals,
+    #                         dropna9_12Cr,
+    #                         exclude9_12Cr,
+    #                         t_pg,m_pg,
+    #                         RandomForestRegressor,
+    #                         'back_select RandonForestRegressor',
+    # )
+    # print(bs.select())
 
     #~~~~~~~~~~~~~~~OPTIMIZING HYPER PARAMETERS~~~~~~~~~~~~~~~~~~~
     # MLPRegressor(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
@@ -1518,7 +1589,13 @@ if __name__ == "__main__":
 
 
     ##########################################################################################################
-    # Graphs
+    # Graphs Discovery
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_discovery,
+    #                         exclude_cols=exclude9_12Cr_discovery,
+    #                         fill_vals=fill_vals,
+    #                         )
     # Data = N9_12Cr.prep_it_split()
     # Data['preds']['RT'] = Data['labels']
     # E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
@@ -1531,12 +1608,11 @@ if __name__ == "__main__":
     # scaler.fit(E80D)
     # E80D = scaler.transform(E80D)
     # T20D = scaler.transform(T20D)
+    # ######################################
     # m_pg = {'max_iter':5000,
     #             'activation':'relu',
     #             'solver':'lbfgs',
-    #             'alpha':0.01,
-    #             'learning_rate':'adaptive',
-    #             'early_stopping':True}
+    #             'alpha':0.01}
     # m = MLPRegressor(**m_pg)
     # m.fit(E80D,E80DL)
     # results = m.predict(T20D)
@@ -1556,61 +1632,256 @@ if __name__ == "__main__":
     # x = y
     # plt.plot(x,y,c='r')
     # plt.legend(['R^2: %.2f'%(r_sq)])
-    # save_fig('9-12Cr MLP Test 2 reduced max iter 5000')
+    # save_fig('9-12Cr MLP Discovery Test')
+    # ###########################################
+    # m_pg = {'learning_rate':0.25,
+    #         'max_depth':4,
+    #         'n_estimators':300,
+    #         }
+    # m = GradientBoostingRegressor(**m_pg)
+    # m.fit(E80D,E80DL)
+    # results = m.predict(T20D)
 
-    ##########################################Keras work################
-    # from keras.models import Sequential
-    # from keras.layers import Dense
-    # #print(len(list(np.transpose(E80D))))
-    # #E80D=np.transpose(E80D)
-    # #print(E80DL.shape)
-    # #data = np.loadtxt("data.csv",delimiter=",")
-    # #X = data[:,0:8]
-    # #Y = data[:,8]
-    # model = Sequential()
-    # model.add(Dense(100,input_dim=20,activation='relu'))
-    # model.add(Dense(32,activation='relu'))
-    # model.add(Dense(1,activation='sigmoid'))
+    # results = pd.Series(results,index=T20DL.index)
 
-    # model.compile(loss='mean_squared_error',optimizer='sgd',metrics=['accuracy'])
-    # model.fit(E80D,E80DL,epochs=200,batch_size=10)
-    # scores = model.evaluate(E80D,E80DL)
-    # print("\n%s: %.2f%%"%(model.metrics_names[1],scores[1]*100))
+    # r_sq=r2_score(results,T20DL)
 
+    # plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    # lim = int(max(max(results),max(T20DL)))+1
+    # plt.scatter(results,T20DL)
+    # plt.xlabel('Predicted RT')
+    # plt.ylabel('Actual RT')
+    # plt.xlim(0,lim)
+    # plt.ylim(0,lim)
+    # y = np.linspace(0, lim, 100)
+    # x = y
+    # plt.plot(x,y,c='r')
+    # plt.legend(['R^2: %.2f'%(r_sq)])
+    # save_fig('9-12Cr Gradient Boosting Discovery Test')
 
-    ##### New Feature selection ####
-    m_pg ={'n_estimators':300}# {'max_iter':400,
+    # #############################################
+    # m_pg = {'n_jobs':-1,
+    #         'n_estimators':300,
+    #         }
+    # m = RandomForestRegressor(**m_pg)
+    # m.fit(E80D,E80DL)
+    # results = m.predict(T20D)
+
+    # results = pd.Series(results,index=T20DL.index)
+
+    # r_sq=r2_score(results,T20DL)
+
+    # plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    # lim = int(max(max(results),max(T20DL)))+1
+    # plt.scatter(results,T20DL)
+    # plt.xlabel('Predicted RT')
+    # plt.ylabel('Actual RT')
+    # plt.xlim(0,lim)
+    # plt.ylim(0,lim)
+    # y = np.linspace(0, lim, 100)
+    # x = y
+    # plt.plot(x,y,c='r')
+    # plt.legend(['R^2: %.2f'%(r_sq)])
+    # save_fig('9-12Cr Random Forests Discovery Test')
+
+    #####################################################################################################
+
+    # Graphs
+    # Multi-layer Perceptron Regression
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_MLP,
+    #                         exclude_cols=exclude9_12Cr_MLP,
+    #                         fill_vals=fill_vals,
+    #                         )
+    # Data = N9_12Cr.prep_it_split()
+    # Data['preds']['RT'] = Data['labels']
+    # E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    # E80DL = E80D['RT']
+    # E80D = E80D.drop(['RT'],axis=1)
+    # T20DL = T20D['RT']
+    # T20D = T20D.drop(['RT'],axis=1)
+
+    # scaler = StandardScaler()
+    # scaler.fit(E80D)
+    # E80D = scaler.transform(E80D)
+    # T20D = scaler.transform(T20D)
+
+    # m_pg = {'max_iter':5000,
     #             'activation':'relu',
     #             'solver':'lbfgs',
-    #             'alpha':0.001,
-    #             }
-    t_pg = [{'tr_scaler':[StandardScaler]}]
-    # from sklearn.feature_selection import SelectFromModel
-    # reg = RandomForestRegressor()
-    # Data = N9_12Cr.prep_it_split()
-    # X = Data['preds']
-    # print(X.columns)
-    # print("type: "+str(type(X)))
-    # Y = Data['labels']
-    # print("Before: "+str(X.shape))
-    # reg.fit(X,Y)
-    # model = SelectFromModel(reg,prefit=True)
-    # X_new = model.transform(X)
-    # print("type: "+str(type(X_new)))
-    # print("After: "+str(X_new.shape))
-    # print(X_new)
-    # NewData= Data
-    # NewData['preds'] = X_new
-    # NewData['labels'] = Y
+    #             'alpha':0.01}
+    # m = MLPRegressor(**m_pg)
+    # m.fit(E80D,E80DL)
+    # results = m.predict(T20D)
 
-    # print("Selected Features:"+str(model.get_support()))
-    # print("Selected Features:"+str(model.get_support(True)))
-    Evaluator = AlloyModelEval(eval_name='RandForest with new Feat Select',#Give this test a name
-                            estimator=RandomForestRegressor,#Give it an ML algorithm to use
-                            alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
-                            model_param_grid=m_pg,#Give it parameter values to try
-                            tran_param_grid=t_pg,#Give it scalers to try
-                            cv=10,
-                            gscv=5
+    # results = pd.Series(results,index=T20DL.index)
+
+    # r_sq=r2_score(results,T20DL)
+
+    # plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    # lim = int(max(max(results),max(T20DL)))+1
+    # plt.scatter(results,T20DL)
+    # plt.xlabel('Predicted RT')
+    # plt.ylabel('Actual RT')
+    # plt.xlim(0,lim)
+    # plt.ylim(0,lim)
+    # y = np.linspace(0, lim, 100)
+    # x = y
+    # plt.plot(x,y,c='r')
+    # plt.legend(['R^2: %.2f'%(r_sq)])
+    # save_fig('Actual vs Predicted MLP Final Test')
+
+    # Gradient Boosting Regression##########################################
+    N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+                            label='RT',
+                            dropna_cols=dropna9_12Cr_MLP,
+                            exclude_cols=exclude9_12Cr_MLP,
+                            fill_vals=fill_vals,
                             )
-    Evaluator.perform_validation()
+    Data = N9_12Cr.prep_it_split()
+    Data['preds']['RT'] = Data['labels']
+    E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    E80DL = E80D['RT']
+    E80D = E80D.drop(['RT'],axis=1)
+    T20DL = T20D['RT']
+    T20D = T20D.drop(['RT'],axis=1)
+
+    scaler = StandardScaler()
+    scaler.fit(E80D)
+    E80D = scaler.transform(E80D)
+    T20D = scaler.transform(T20D)
+
+    m_pg = {'learning_rate':0.25,
+            'max_depth':4,
+            'n_estimators':300,
+            }
+    m = GradientBoostingRegressor(**m_pg)
+    m.fit(E80D,E80DL)
+    results = m.predict(T20D)
+
+    results = pd.Series(results,index=T20DL.index)
+
+    r_sq=r2_score(results,T20DL)
+
+    plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    lim = int(max(max(results),max(T20DL)))+1
+    plt.scatter(results,T20DL)
+    plt.xlabel('Predicted RT')
+    plt.ylabel('Actual RT')
+    plt.xlim(0,lim)
+    plt.ylim(0,lim)
+    y = np.linspace(0, lim, 100)
+    x = y
+    plt.plot(x,y,c='r')
+    plt.legend(['R^2: %.2f'%(r_sq)])
+    save_fig('Actual vs Predicted Gradient Boosting Final Test')
+
+    # Random Forest Regresssion #############################################
+    N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+                            label='RT',
+                            dropna_cols=dropna9_12Cr_RF,
+                            exclude_cols=exclude9_12Cr_RF,
+                            fill_vals=fill_vals,
+                            )
+    Data = N9_12Cr.prep_it_split()
+    Data['preds']['RT'] = Data['labels']
+    E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    E80DL = E80D['RT']
+    E80D = E80D.drop(['RT'],axis=1)
+    T20DL = T20D['RT']
+    T20D = T20D.drop(['RT'],axis=1)
+
+    scaler = StandardScaler()
+    scaler.fit(E80D)
+    E80D = scaler.transform(E80D)
+    T20D = scaler.transform(T20D)
+    m_pg = {'n_jobs':-1,
+            'n_estimators':300,
+            }
+    m = RandomForestRegressor(**m_pg)
+    m.fit(E80D,E80DL)
+    results = m.predict(T20D)
+
+    results = pd.Series(results,index=T20DL.index)
+
+    r_sq=r2_score(results,T20DL)
+
+    plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    lim = int(max(max(results),max(T20DL)))+1
+    plt.scatter(results,T20DL)
+    plt.xlabel('Predicted RT')
+    plt.ylabel('Actual RT')
+    plt.xlim(0,lim)
+    plt.ylim(0,lim)
+    y = np.linspace(0, lim, 100)
+    x = y
+    plt.plot(x,y,c='r')
+    plt.legend(['R^2: %.2f'%(r_sq)])
+    save_fig('Actual vs Predicted Random Forests Final Test')
+
+
+    # Final Evalutions ##########################################################################
+
+    # # MLP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_discovery,
+    #                         exclude_cols=exclude9_12Cr_discovery,
+    #                         fill_vals=fill_vals,
+    #                         )
+
+    # t_pg = [{'tr_scaler':[StandardScaler]}]
+    # m_pg = {'max_iter':400,'activation':'relu','solver':'lbfgs','alpha':0.01}
+
+    # Evaluator = AlloyModelEval(eval_name='Discovery MLP Test',#Give this test a name
+    #                         estimator=MLPRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         cv=10
+    #                         )
+    # Evaluator.perform_validation()
+
+    # # Random Forest Regression ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_discovery,
+    #                         exclude_cols=exclude9_12Cr_discovery,
+    #                         fill_vals=fill_vals,
+    #                         )
+
+    # t_pg = [{'tr_scaler':[StandardScaler]}]
+    # m_pg = {'n_estimators':325,'n_jobs':-1}
+
+    # Evaluator = AlloyModelEval(eval_name='Discovery RFR Test',#Give this test a name
+    #                         estimator=RandomForestRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr.prep_it_split(),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         cv=10
+    #                         )
+    # Evaluator.perform_validation()
+
+    # # Gradient Boosting Regression ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_discovery,
+    #                         exclude_cols=exclude9_12Cr_discovery,
+    #                         fill_vals=fill_vals
+    #                         )
+
+    # t_pg = [{'tr_scaler':[StandardScaler]}]
+    # m_pg = {'learning_rate':0.25,'max_depth':4,'n_estimators':300}
+
+    # Evaluator = AlloyModelEval(eval_name='Discovery GB Test',#Give this test a name
+    #                         estimator=GradientBoostingRegressor,#Give it an ML algorithm to use
+    #                         alloy_data=N9_12Cr.log_it(['CS'],label=True),#Give it the Data preped
+    #                         model_param_grid=m_pg,#Give it parameter values to try
+    #                         tran_param_grid=t_pg,#Give it scalers to try
+    #                         apply=True,
+    #                         DataPreper=Data_9_12_Preper_log,
+    #                         applyFunc=apply_9_12_func_log,
+    #                         cv=10
+    #                         )
+    # Evaluator.perform_validation()

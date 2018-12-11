@@ -1,0 +1,41 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: Discovery RFR Test
+Size of Dataset:  492
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 4541.646906
+	STD RMSE: 3402.353868
+	Mean R Squared: 0.9666994860536482
+	STD R Squared: 0.030292
+	RMSE SCORES:
+		[0] 3769.182957  {'n_estimators': 325, 'n_jobs': -1}
+		[1] 3721.643624  {'n_estimators': 325, 'n_jobs': -1}
+		[2] 13906.644665  {'n_estimators': 325, 'n_jobs': -1}
+		[3] 2374.683031  {'n_estimators': 325, 'n_jobs': -1}
+		[4] 3203.064668  {'n_estimators': 325, 'n_jobs': -1}
+		[5] 3551.237596  {'n_estimators': 325, 'n_jobs': -1}
+		[6] 2325.243409  {'n_estimators': 325, 'n_jobs': -1}
+		[7] 6920.573615  {'n_estimators': 325, 'n_jobs': -1}
+		[8] 4012.465054  {'n_estimators': 325, 'n_jobs': -1}
+		[9] 1631.730441  {'n_estimators': 325, 'n_jobs': -1}
+
+Train Scores:
+	Mean RMSE: 2047.252726
+	STD RMSE: 197.419052
+	Mean R Squared: 0.9937623278425665
+	STD R Squared: 0.000875
+	RMSE SCORES:
+		[0] 2138.019543  {'n_estimators': 325, 'n_jobs': -1}
+		[1] 2147.858126  {'n_estimators': 325, 'n_jobs': -1}
+		[2] 1550.871302  {'n_estimators': 325, 'n_jobs': -1}
+		[3] 2126.390858  {'n_estimators': 325, 'n_jobs': -1}
+		[4] 2174.987548  {'n_estimators': 325, 'n_jobs': -1}
+		[5] 2083.978422  {'n_estimators': 325, 'n_jobs': -1}
+		[6] 2194.385386  {'n_estimators': 325, 'n_jobs': -1}
+		[7] 1811.781633  {'n_estimators': 325, 'n_jobs': -1}
+		[8] 2042.272975  {'n_estimators': 325, 'n_jobs': -1}
+		[9] 2201.981464  {'n_estimators': 325, 'n_jobs': -1}
+************************************************************************

@@ -1,0 +1,41 @@
+Evaluation Test on dataset: 9_12_Cr.csv
+
+Test: Discovery MLP Test
+Size of Dataset:  492
+
+
+(((((((((((((((((((((((((((((((((((((( Model Performance Results ))))))))))))))))))))))))))))))))))))))
+Test Scores:
+	Mean RMSE: 3365.375111
+	STD RMSE: 1849.645780
+	Mean R Squared: 0.9798852544583667
+	STD R Squared: 0.018362
+	RMSE SCORES:
+		[0] 5734.272013  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[1] 1507.333993  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[2] 2165.368728  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[3] 1695.742255  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[4] 2506.407758  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[5] 2906.951176  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[6] 4641.175562  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[7] 1700.664421  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[8] 7309.834540  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[9] 3486.000665  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+
+Train Scores:
+	Mean RMSE: 195.072660
+	STD RMSE: 32.303897
+	Mean R Squared: 0.9999386158673413
+	STD R Squared: 0.000017
+	RMSE SCORES:
+		[0] 240.325393  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[1] 197.700464  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[2] 186.930741  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[3] 206.755829  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[4] 222.225922  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[5] 177.917856  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[6] 226.690817  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[7] 174.000324  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[8] 119.636999  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+		[9] 198.542251  {'max_iter': 400, 'activation': 'relu', 'solver': 'lbfgs', 'alpha': 0.01}
+************************************************************************
