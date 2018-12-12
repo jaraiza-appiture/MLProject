@@ -1733,55 +1733,57 @@ if __name__ == "__main__":
     # save_fig('Actual vs Predicted MLP Final Test')
 
     # Gradient Boosting Regression##########################################
-    N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
-                            label='RT',
-                            dropna_cols=dropna9_12Cr_MLP,
-                            exclude_cols=exclude9_12Cr_MLP,
-                            fill_vals=fill_vals,
-                            )
-    Data = N9_12Cr.prep_it_split()
-    Data['preds']['RT'] = Data['labels']
-    E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
-    E80DL = E80D['RT']
-    E80D = E80D.drop(['RT'],axis=1)
-    T20DL = T20D['RT']
-    T20D = T20D.drop(['RT'],axis=1)
+    # N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
+    #                         label='RT',
+    #                         dropna_cols=dropna9_12Cr_GB,
+    #                         exclude_cols=exclude9_12Cr_GB,
+    #                         fill_vals=fill_vals,
+    #                         )
+    # Data = N9_12Cr.log_it(['CS'],label=True)
+    # Data['preds']['log_RT'] = Data['labels']
+    # E80D,T20D = train_test_split(Data['preds'],test_size=0.20)
+    # E80DL = E80D['log_RT']
+    # E80D = E80D.drop(['log_RT'],axis=1)
+    # T20DL = T20D['log_RT']
+    # T20D = T20D.drop(['log_RT'],axis=1)
 
-    scaler = StandardScaler()
-    scaler.fit(E80D)
-    E80D = scaler.transform(E80D)
-    T20D = scaler.transform(T20D)
+    # scaler = StandardScaler()
+    # scaler.fit(E80D)
+    # E80D = scaler.transform(E80D)
+    # T20D = scaler.transform(T20D)
 
-    m_pg = {'learning_rate':0.25,
-            'max_depth':4,
-            'n_estimators':300,
-            }
-    m = GradientBoostingRegressor(**m_pg)
-    m.fit(E80D,E80DL)
-    results = m.predict(T20D)
+    # m_pg = {'learning_rate':0.25,
+    #         'max_depth':4,
+    #         'n_estimators':300,
+    #         }
+    # m = GradientBoostingRegressor(**m_pg)
+    # m.fit(E80D,E80DL)
+    # results = m.predict(T20D)
 
-    results = pd.Series(results,index=T20DL.index)
+    # T20DL = pd.Series(np.exp(T20DL),name=T20DL.name,index=T20DL.index)
+    # results = pd.Series(np.exp(results),name='Predicted RT',index=T20DL.index)
 
-    r_sq=r2_score(results,T20DL)
 
-    plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
-    lim = int(max(max(results),max(T20DL)))+1
-    plt.scatter(results,T20DL)
-    plt.xlabel('Predicted RT')
-    plt.ylabel('Actual RT')
-    plt.xlim(0,lim)
-    plt.ylim(0,lim)
-    y = np.linspace(0, lim, 100)
-    x = y
-    plt.plot(x,y,c='r')
-    plt.legend(['R^2: %.2f'%(r_sq)])
-    save_fig('Actual vs Predicted Gradient Boosting Final Test')
+    # r_sq=r2_score(results,T20DL)
+
+    # plt.figure(num=None, figsize=(8, 8), dpi=80, facecolor='w', edgecolor='k')
+    # lim = int(max(max(results),max(T20DL)))+1
+    # plt.scatter(results,T20DL)
+    # plt.xlabel('Predicted RT')
+    # plt.ylabel('Actual RT')
+    # plt.xlim(0,lim)
+    # plt.ylim(0,lim)
+    # y = np.linspace(0, lim, 100)
+    # x = y
+    # plt.plot(x,y,c='r')
+    # plt.legend(['R^2: %.2f'%(r_sq)])
+    # save_fig('Actual vs Predicted Gradient Boosting Final Test 2')
 
     # Random Forest Regresssion #############################################
     N9_12Cr = AlloyDataPreper(Dataset='9_12_Cr.csv',
                             label='RT',
-                            dropna_cols=dropna9_12Cr_RF,
-                            exclude_cols=exclude9_12Cr_RF,
+                            dropna_cols=dropna9_12Cr,
+                            exclude_cols=exclude9_12Cr,
                             fill_vals=fill_vals,
                             )
     Data = N9_12Cr.prep_it_split()
@@ -1797,7 +1799,7 @@ if __name__ == "__main__":
     E80D = scaler.transform(E80D)
     T20D = scaler.transform(T20D)
     m_pg = {'n_jobs':-1,
-            'n_estimators':300,
+            'n_estimators':350,
             }
     m = RandomForestRegressor(**m_pg)
     m.fit(E80D,E80DL)
@@ -1818,7 +1820,7 @@ if __name__ == "__main__":
     x = y
     plt.plot(x,y,c='r')
     plt.legend(['R^2: %.2f'%(r_sq)])
-    save_fig('Actual vs Predicted Random Forests Final Test')
+    save_fig('Actual vs Predicted Random Forests Final Test log')
 
 
     # Final Evalutions ##########################################################################
